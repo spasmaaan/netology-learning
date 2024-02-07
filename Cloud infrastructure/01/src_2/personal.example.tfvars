@@ -1,6 +1,5 @@
 resource "yandex-auth-secrets" {
-  token       = abcdefghijklmnopqrst
-  folder_id   = abcdefghijklmnopqrst
-  access_key  = asdasd
-  secret_key  = asdasd
+  token             = "abcdefghijklmnopqrst"
+  folder_id         = "abcdefghijklmnopqrst"
+  account_key_file  = "~/key.json"
 }
