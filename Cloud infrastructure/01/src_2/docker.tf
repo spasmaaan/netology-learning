@@ -1,15 +1,27 @@
 provider "docker" {
-  host     = "ssh://user@remote-host:22"
-  ssh_opts = ["-o", "StrictHostKeyChecking=no", "-o", "UserKnownHostsFile=/dev/null"]
+  host = "unix:///var/run/docker.sock"
 }
 
 resource "docker_image" "mysql" {
-  name         = "mysql:8"
+  name = "mysql:8"
 }
 
 resource "docker_container" "mysql" {
   image = docker_image.mysql.image_id
   name  = "mysql"
+
+  provisioner "remote-exec" {
+    inline = [
+      "echo 'Hello!'",
+    ]
+
+    connection {
+      type        = "ssh"
+      user        = "root"
+      host        = self.network_data.0.ip_address
+      timeout     = "2m"
+    }
+  }
 
   ports {
     internal = 3306
