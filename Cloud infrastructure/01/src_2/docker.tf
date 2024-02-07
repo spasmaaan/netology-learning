@@ -15,11 +15,11 @@ resource "docker_container" "mysql" {
     internal = 3306
   }
 
-  environment = {
-    "MYSQL_ROOT_PASSWORD" = "example_${random_password.random_string.result}"
-    "MYSQL_DATABASE"      = "wordpress"
-    "MYSQL_USER"          = "wordpress"
-    "MYSQL_PASSWORD"      = "example_${random_password.random_string.result}"
-    "MYSQL_ROOT_HOST"     = "%"
-  }
+  env = [
+    "MYSQL_ROOT_PASSWORD=example_${random_password.random_string.result}",
+    "MYSQL_DATABASE=wordpress",
+    "MYSQL_USER=wordpress",
+    "MYSQL_PASSWORD=example_${random_password.random_string.result}",
+    "MYSQL_ROOT_HOST=%"
+  ]
 }
