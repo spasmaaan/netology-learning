@@ -3,12 +3,12 @@ variable "yandex_cloud_id" {
   default = "abcdefghijklmnopqrst"
 }
 
-resource "yandex_folder_id" {
+variable "yandex_folder_id" {
   type    = string
   default = "abcdefghijklmnopqrst"
 }
 
-resource "yandex_account_key_file" {
+variable "yandex_account_key_file" {
   type    = string
   default = "~/key.json"
 }
