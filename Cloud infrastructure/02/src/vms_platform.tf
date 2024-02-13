@@ -1,12 +1,12 @@
 resource "yandex_compute_instance" "platform_web" {
   name        = local.vm_web_name
-  platform_id = vms_resources.web.platform_id
-  zone        = vms_resources.web.zone
+  platform_id = var.vms_resources.web.platform_id
+  zone        = var.vms_resources.web.zone
   metadata = local.vm_metadata
   resources {
-    cores         = vms_resources.web.cores
-    memory        = vms_resources.web.memory
-    core_fraction = vms_resources.web.core_fraction
+    cores         = var.vms_resources.web.cores
+    memory        = var.vms_resources.web.memory
+    core_fraction = var.vms_resources.web.core_fraction
   }
   boot_disk {
     initialize_params {
@@ -24,13 +24,13 @@ resource "yandex_compute_instance" "platform_web" {
 
 resource "yandex_compute_instance" "platform_db" {
   name        = local.vm_db_name
-  platform_id = vms_resources.db.platform_id
-  zone        = vms_resources.db.zone
+  platform_id = var.vms_resources.db.platform_id
+  zone        = var.vms_resources.db.zone
   metadata = local.vm_metadata
   resources {
-    cores         = vms_resources.db.cores
-    memory        = vms_resources.db.memory
-    core_fraction = vms_resources.db.core_fraction
+    cores         = var.vms_resources.db.cores
+    memory        = var.vms_resources.db.memory
+    core_fraction = var.vms_resources.db.core_fraction
   }
   boot_disk {
     initialize_params {
