@@ -46,7 +46,7 @@ resource "yandex_compute_instance" "platform-db" {
     preemptible = true
   }
   network_interface {
-    subnet_id = yandex_vpc_subnet_db.develop.id
+    subnet_id = yandex_vpc_subnet.develop_db.id
     nat       = true
   }
 
