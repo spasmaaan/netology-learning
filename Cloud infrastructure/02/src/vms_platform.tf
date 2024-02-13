@@ -1,7 +1,7 @@
-resource "yandex_compute_instance" "platform-web" {
+resource "yandex_compute_instance" "platform_web" {
   name        = var.vm_web_name
   platform_id = var.vm_web_platform_id
-  zone        = var.default_zone
+  zone        = var.web_zone
 
   resources {
     cores         = var.vm_web_cores
@@ -17,7 +17,7 @@ resource "yandex_compute_instance" "platform-web" {
     preemptible = true
   }
   network_interface {
-    subnet_id = yandex_vpc_subnet.develop.id
+    subnet_id = yandex_vpc_subnet.develop_web.id
     nat       = true
   }
 
@@ -27,7 +27,7 @@ resource "yandex_compute_instance" "platform-web" {
   }
 }
 
-resource "yandex_compute_instance" "platform-db" {
+resource "yandex_compute_instance" "platform_db" {
   name        = var.vm_db_name
   platform_id = var.vm_db_platform_id
   zone        = var.db_zone
@@ -47,7 +47,6 @@ resource "yandex_compute_instance" "platform-db" {
   }
   network_interface {
     subnet_id = yandex_vpc_subnet.develop_db.id
-    nat       = true
   }
 
   metadata = {
