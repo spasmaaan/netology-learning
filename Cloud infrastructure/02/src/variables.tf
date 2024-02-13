@@ -65,12 +65,6 @@ variable "image_name" {
   description = "Ubuntu image name"
 }
 
-variable "vm_web_name" {
-  type        = string
-  default     = "netology-develop-platform-web"
-  description = "VM web name"
-}
-
 variable "vm_web_platform_id" {
   type        = string
   default     = "standard-v1"
@@ -93,12 +87,6 @@ variable "vm_web_core_fraction" {
   type        = number
   default     = 5
   description = "VM web core fraction"
-}
-
-variable "vm_db_name" {
-  type        = string
-  default     = "netology-develop-platform-db"
-  description = "VM db name"
 }
 
 variable "vm_db_platform_id" {
