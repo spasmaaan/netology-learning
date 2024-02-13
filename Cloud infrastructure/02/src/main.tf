@@ -4,16 +4,16 @@ resource "yandex_vpc_network" "develop" {
 
 resource "yandex_vpc_subnet" "develop_web" {
   name           = local.vpc_web_name
-  zone           = vms_resources.web.zone
+  zone           = var.vms_resources.web.zone
   network_id     = yandex_vpc_network.develop.id
-  v4_cidr_blocks = vms_resources.web.cidr
+  v4_cidr_blocks = var.vms_resources.web.cidr
 }
 
 resource "yandex_vpc_subnet" "develop_db" {
   name           = local.vpc_db_name
-  zone           = vms_resources.db.zone
+  zone           = var.vms_resources.db.zone
   network_id     = yandex_vpc_network.develop.id
-  v4_cidr_blocks = vms_resources.db.cidr
+  v4_cidr_blocks = var.vms_resources.db.cidr
 }
 
 data "yandex_compute_image" "ubuntu" {
