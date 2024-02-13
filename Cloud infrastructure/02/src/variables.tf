@@ -47,31 +47,19 @@ variable "vpc_name" {
   description = "VPC web network & subnet name"
 }
 
-variable "default_zone" {
-  type        = string
-  default     = "ru-central1-a"
-  description = "Default zone"
-}
-
-variable "default_cidr" {
-  type        = list(string)
-  default     = ["10.0.1.0/24"]
-  description = "Default CIDR"
-}
-
 variable "vms_resources" {
-  type = map({
+  type = map(object({
     cidr          = list(string),
     zone          = string,
     platform_id   = string,
     cores         = number,
     memory        = number,
     core_fraction = number
-  })
+  }))
   default = {
     web = {
-      cidr          = var.default_cidr,
-      zone          = var.default_zone,
+      cidr          = ["10.0.1.0/24"],
+      zone          = "ru-central1-a",
       platform_id   = "standard-v1",
       cores         = 2,
       memory        = 1,

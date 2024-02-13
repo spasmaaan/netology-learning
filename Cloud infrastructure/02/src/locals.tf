@@ -9,4 +9,8 @@ locals {
         serial-port-enable = true
         ssh-keys           = "ubuntu:${var.vms_ssh_root_key}"
     }
+
+    default = {
+        zone = var.vms_resources.web.zone
+    }
 }
