@@ -1,4 +1,7 @@
 locals {
+    gateway_name = "${var.vpc_name}-gateway"
+    routes_name = "${var.vpc_name}-route-table"
+
     vpc_web_name = "${var.vpc_name}-web"
     vpc_db_name = "${var.vpc_name}-db"
 

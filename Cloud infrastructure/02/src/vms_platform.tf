@@ -18,7 +18,6 @@ resource "yandex_compute_instance" "platform_web" {
   }
   network_interface {
     subnet_id = yandex_vpc_subnet.develop_web.id
-    nat       = true
   }
 }
 
