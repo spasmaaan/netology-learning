@@ -31,7 +31,7 @@ resource "yandex_compute_instance" "platform-db" {
   name        = var.vm_db_name
   platform_id = var.vm_db_platform_id
   zone        = var.db_zone
-  
+
   resources {
     cores         = var.vm_db_cores
     memory        = var.vm_db_memory
@@ -46,7 +46,7 @@ resource "yandex_compute_instance" "platform-db" {
     preemptible = true
   }
   network_interface {
-    subnet_id = yandex_vpc_subnet.develop.id
+    subnet_id = yandex_vpc_subnet_db.develop.id
     nat       = true
   }
 
