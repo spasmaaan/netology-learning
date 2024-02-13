@@ -43,13 +43,6 @@ variable "vpc_name" {
   description = "VPC web network & subnet name"
 }
 
-variable "vpc_db_name" {
-  type        = string
-  default     = "develop-db"
-  description = "VPC db network & subnet name"
-}
-
-
 ###ssh vars
 
 variable "vms_ssh_root_key" {
