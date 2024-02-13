@@ -15,6 +15,7 @@ variable "folder_id" {
   description = "https://cloud.yandex.ru/docs/resource-manager/operations/folder/get-id"
 }
 
+/*
 // default_zone 
 variable "web_zone" {
   type        = string
@@ -38,13 +39,55 @@ variable "db_cidr" {
   type        = list(string)
   default     = ["10.0.2.0/24"]
 }
-
+*/
 
 variable "vpc_name" {
   type        = string
   default     = "develop"
   description = "VPC web network & subnet name"
 }
+
+variable "default_zone" {
+  type        = string
+  default     = "ru-central1-a"
+  description = "Default zone"
+}
+
+variable "default_cidr" {
+  type        = list(string)
+  default     = ["10.0.1.0/24"]
+  description = "Default CIDR"
+}
+
+variable "vms_resources" {
+  type = map({
+    cidr          = list(string),
+    zone          = string,
+    platform_id   = string,
+    cores         = number,
+    memory        = number,
+    core_fraction = number
+  })
+  default = {
+    web = {
+      cidr          = var.default_cidr,
+      zone          = var.default_zone,
+      platform_id   = "standard-v1",
+      cores         = 2,
+      memory        = 1,
+      core_fraction = 5
+    }
+    db  = {
+      cidr          = ["10.0.2.0/24"],
+      zone          = "ru-central1-b",
+      platform_id   = "standard-v1",
+      cores         = 2,
+      memory        = 2,
+      core_fraction = 20
+    }
+  }
+}
+
 
 ###ssh vars
 
@@ -65,6 +108,7 @@ variable "image_name" {
   description = "Ubuntu image name"
 }
 
+/*
 variable "vm_web_platform_id" {
   type        = string
   default     = "standard-v1"
@@ -112,3 +156,4 @@ variable "vm_db_core_fraction" {
   default     = 20
   description = "VM db core fraction"
 }
+*/
