@@ -3,7 +3,7 @@ resource "yandex_vpc_network" "develop" {
 }
 
 resource "yandex_vpc_subnet" "develop_web" {
-  name           = var.vpc_name
+  name           = "${var.vpc_name}-web"
   zone           = var.web_zone
   network_id     = yandex_vpc_network.develop.id
   v4_cidr_blocks = var.web_cidr
