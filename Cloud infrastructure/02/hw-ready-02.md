@@ -152,7 +152,10 @@ test = [
 **+**
    
 2. Напишите выражение в terraform console, которое позволит вычленить строку "ssh -o 'StrictHostKeyChecking=no' ubuntu@62.84.124.117"
-   
+```
+> var.test[0].dev1[0]
+"ssh -o 'StrictHostKeyChecking=no' ubuntu@62.84.124.117"
+```
 
 ### Задание 9*
 
