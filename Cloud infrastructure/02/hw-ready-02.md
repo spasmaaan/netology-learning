@@ -98,15 +98,30 @@
 Изучите содержимое файла console.tf. Откройте terraform console, выполните следующие задания: 
 
 1. Напишите, какой командой можно отобразить **второй** элемент списка test_list.
+```
+> local.test_list[1]
+"staging"
+```
    
 2. Найдите длину списка test_list с помощью функции length(<имя переменной>).
+```
+> length(local.test_list)
+3
+```
    
 3. Напишите, какой командой можно отобразить значение ключа admin из map test_map.
-   
+```
+> keys(local.test_map)[0]
+"admin"
+```
+
 4. Напишите interpolation-выражение, результатом которого будет: "John is admin for production server based on OS ubuntu-20-04 with X vcpu, Y ram and Z virtual disks", используйте данные из переменных test_list, test_map, servers и функцию length() для подстановки значений.
 **Примечание**: если не догадаетесь как вычленить слово "admin", погуглите: "terraform get keys of map"
 В качестве решения предоставьте необходимые команды и их вывод.
-   
+```
+> "${local.test_map.admin} is ${keys(local.test_map)[0]} for ${keys(local.servers)[2]} server based on OS ${local.servers.production.image} with ${local.servers.production.cpu} vcpu, ${local.servers.production.ram} ram and ${length(local.servers.production.disks)} virtual disks"
+"John is admin for stage server based on OS ubuntu-20-04 with 10 vcpu, 40 ram and 4 virtual disks"
+```
 
 ------
 
@@ -134,6 +149,7 @@ test = [
   },
 ]
 ```
+**+**
    
 2. Напишите выражение в terraform console, которое позволит вычленить строку "ssh -o 'StrictHostKeyChecking=no' ubuntu@62.84.124.117"
    
