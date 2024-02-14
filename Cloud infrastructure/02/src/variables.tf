@@ -147,7 +147,7 @@ variable "vm_db_core_fraction" {
 */
 
 variable "test" {
-  type    = list(map(tuple(string, string)))
+  type    = list(map(tuple([string, string])))
   default = [
     {
       "dev1" = [
