@@ -4,14 +4,14 @@ resource "yandex_compute_instance" "db" {
     1 = "replica"
   }
   name        = each.value
-  platform_id = var.each_vm[each.key].platform_id
+  platform_id = var.each_vm[tonumber(each.key)].platform_id
   zone        = var.default_zone
   metadata    = local.vm_metadata
 
   resources {
-    cores         = var.each_vm[each.key].cores
-    memory        = var.each_vm[each.key].memory
-    core_fraction = var.each_vm[each.key].core_fraction
+    cores         = var.each_vm[tonumber(each.key)].cores
+    memory        = var.each_vm[tonumber(each.key)].memory
+    core_fraction = var.each_vm[tonumber(each.key)].core_fraction
   }
   boot_disk {
     initialize_params {
@@ -24,6 +24,6 @@ resource "yandex_compute_instance" "db" {
   network_interface {
     subnet_id = yandex_vpc_subnet.develop.id
     nat = local.vm_use_nat
-    security_group_ids = var.each_vm[each.key].security_group_ids
+    security_group_ids = var.each_vm[tonumber(each.key)].security_group_ids
   }
 }
