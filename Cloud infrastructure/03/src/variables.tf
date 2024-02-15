@@ -31,3 +31,69 @@ variable "vpc_name" {
   default     = "develop"
   description = "VPC network & subnet name"
 }
+
+variable "image_name" {
+  type        = string
+  default     = "ubuntu-2004-lts"
+  description = "Ubuntu image name"
+}
+
+variable "vms_ssh_root_keyfile" {
+  type        = string
+  default     = "~/.ssh/id_rsa.pub"
+  description = "ssh-keygen -t ed25519"
+}
+
+variable "vm_web_count" {
+  type        = number
+  default     = 2
+  description = "Number of web VMs"
+}
+
+variable "count_vm" {
+  type = object({
+    platform_id        = string,
+    cores              = number,
+    memory             = number,
+    core_fraction      = number,
+    disk_volume        = number,
+    security_group_ids = set(string)
+  })
+  default = {
+    platform_id        = "standard-v1",
+    cores              = 2,
+    memory             = 1,
+    core_fraction      = 5,
+    disk_volume        = 0,
+    security_group_ids = []
+  }
+}
+
+variable "each_vm" {
+  type = list(object({
+    platform_id        = string,
+    cores              = number,
+    memory             = number,
+    core_fraction      = number,
+    disk_volume        = number,
+    security_group_ids = set(string)
+  }))
+  default = [
+    {
+      platform_id        = "standard-v1",
+      cores              = 2,
+      memory             = 2,
+      core_fraction      = 20,
+      disk_volume        = 0,
+      security_group_ids = []
+    },
+    {
+      platform_id        = "standard-v1",
+      cores              = 2,
+      memory             = 1,
+      core_fraction      = 5,
+      disk_volume        = 0,
+      security_group_ids = []
+    }
+  ]
+}

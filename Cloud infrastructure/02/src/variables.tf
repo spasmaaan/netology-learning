@@ -90,6 +90,7 @@ variable "yc_keyfile" {
   default     = "~/.authorized_key.json"
   description = "YC service account key file"
 }
+
 variable "image_name" {
   type        = string
   default     = "ubuntu-2004-lts"
