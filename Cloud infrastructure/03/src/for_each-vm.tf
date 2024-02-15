@@ -1,5 +1,8 @@
 resource "yandex_compute_instance" "db" {
-  for_each = toset(["main", "replica"])
+  for_each = {
+    0 = "main", 
+    1 = "replica"
+  }
   name        = each.value
   platform_id = var.each_vm[each.key].platform_id
   zone        = var.default_zone
