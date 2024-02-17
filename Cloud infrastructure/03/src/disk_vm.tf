@@ -31,7 +31,7 @@ resource "yandex_compute_instance" "storage" {
     security_group_ids = [yandex_vpc_security_group.develop.id]
   }
 
-  dynamic secondary_disk {
+  dynamic "secondary_disk" {
     for_each    = toset(range(var.disk_secondary.count))
     content     = {
         disk_id     = yandex_compute_disk.secondary_disk[each.key].id
