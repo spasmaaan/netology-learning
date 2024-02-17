@@ -32,10 +32,8 @@ resource "yandex_compute_instance" "storage" {
   }
 
   dynamic secondary_disk {
-    for_each = toset(range(var.disk_secondary.count))
-    content {
-      disk_id     = yandex_compute_disk.secondary_disk[each.key].id
-      auto_delete = var.storage_vm.auto_delete_disks
-    }
+    for_each    = toset(range(var.disk_secondary.count))
+    disk_id     = yandex_compute_disk.secondary_disk[each.key].id
+    auto_delete = var.storage_vm.auto_delete_disks
   }
 }
