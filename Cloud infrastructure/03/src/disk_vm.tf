@@ -7,7 +7,7 @@ resource "yandex_compute_disk" "secondary_disk" {
 }
 
 resource "yandex_compute_instance" "storage" {
-  name        = var.storage_vm.name
+  name        = "storage"
   platform_id = var.storage_vm.platform_id
   zone        = var.default_zone
   metadata    = local.vm_metadata
