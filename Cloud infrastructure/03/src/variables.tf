@@ -92,3 +92,38 @@ variable "each_vm" {
     }
   ]
 }
+
+variable "storage_vm" {
+  type = object({
+    platform_id        = string,
+    cores              = number,
+    memory             = number,
+    core_fraction      = number,
+    disk_volume        = number,
+    auto_delete_disks  = bool
+  })
+  default = {
+    platform_id        = "standard-v1",
+    cores              = 2,
+    memory             = 1,
+    core_fraction      = 5,
+    disk_volume        = 0,
+    auto_delete_disks  = true
+  }
+}
+
+variable "disk_secondary" {
+  type = object({
+    count      = number,
+    namePrefix = string
+    type       = string,
+    size       = number
+  })
+  default = {
+    count      = 3,
+    namePrefix = "secondary-disk-",
+    type       = "network-hdd",
+    size       = 1
+  }
+  description = "Count of secondary disks"
+}
