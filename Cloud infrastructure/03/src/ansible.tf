@@ -10,7 +10,7 @@ resource "local_file" "hosts_templatefile" {
 
 resource "null_resource" "web_hosts_provision" {
   count = var.web_provision == true ? 1 : 0
-  depends_on = yandex_compute_instance.web
+  depends_on = [yandex_compute_instance.web]
 
   provisioner "local-exec" {
     command = "cat ~/.ssh/id_ed25519 | ssh-add -"
