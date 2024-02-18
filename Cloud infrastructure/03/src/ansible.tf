@@ -13,10 +13,6 @@ resource "null_resource" "web_hosts_provision" {
   depends_on = [yandex_compute_instance.web]
 
   provisioner "local-exec" {
-    command = "cat ~/.ssh/id_ed25519 | ssh-add -"
-  }
-
-  provisioner "local-exec" {
     command     = "export ANSIBLE_HOST_KEY_CHECKING=False; ansible-playbook -i ${abspath(path.module)}/${local.ansible_hosts_cfg_filename} ${abspath(path.module)}/${local.ansible_playbook_filename} --extra-vars '{\"secrets\": ${jsonencode( {for k,v in random_password.web: k=>v.result})} }'"
     on_failure  = continue
     environment = { ANSIBLE_HOST_KEY_CHECKING = "False" }
