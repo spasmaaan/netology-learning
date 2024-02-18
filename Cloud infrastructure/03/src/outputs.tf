@@ -1,11 +1,10 @@
 output "vm_info_list" {
     value = { 
-            for vm in concat([
-                tolist(yandex_compute_instance.web),
-                tolist(yandex_compute_instance.db),
-                [yandex_compute_instance.storage]
-            ])
-        : vm => {
+        for key, vm in flatten(concat([
+            tolist(yandex_compute_instance.web),
+            values(yandex_compute_instance.db),
+            [yandex_compute_instance.storage]
+        ])): key => {
             name = vm.name,
             id   = vm.id,
             fqdn = vm.fqdn
