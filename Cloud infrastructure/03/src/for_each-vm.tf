@@ -3,6 +3,8 @@ resource "yandex_compute_instance" "db" {
     0 = "main", 
     1 = "replica"
   }
+  depends_on = yandex_compute_instance.web
+
   name        = each.value
   platform_id = var.each_vm[tonumber(each.key)].platform_id
   zone        = var.default_zone

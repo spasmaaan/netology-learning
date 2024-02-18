@@ -1,9 +1,9 @@
 resource "yandex_compute_disk" "storage_disk" {
-    count = var.disk_secondary.count
-    name = "${var.disk_secondary.namePrefix}${count.index + 1}"
-    type = var.disk_secondary.type
-    zone = var.default_zone
-    size = var.disk_secondary.size
+  count = var.disk_secondary.count
+  name = "${var.disk_secondary.namePrefix}${count.index + 1}"
+  type = var.disk_secondary.type
+  zone = var.default_zone
+  size = var.disk_secondary.size
 }
 
 resource "yandex_compute_instance" "storage" {
@@ -34,8 +34,8 @@ resource "yandex_compute_instance" "storage" {
   dynamic "secondary_disk" {
     for_each = toset(range(var.disk_secondary.count))
     content {
-        disk_id     = yandex_compute_disk.storage_disk["${secondary_disk.key}"].id
-        auto_delete = var.storage_vm.auto_delete_disks
+      disk_id     = yandex_compute_disk.storage_disk["${secondary_disk.key}"].id
+      auto_delete = var.storage_vm.auto_delete_disks
     }
   }
 }

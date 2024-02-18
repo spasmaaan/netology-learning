@@ -1,3 +1,8 @@
+resource "random_password" "web" {
+  count    = var.vm_web_count
+  length = 17
+}
+
 resource "yandex_compute_instance" "web" {
   count       = var.vm_web_count
   name        = "web-${count.index + 1}"

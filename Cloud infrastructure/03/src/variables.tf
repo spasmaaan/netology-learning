@@ -127,3 +127,9 @@ variable "disk_secondary" {
   }
   description = "Count of secondary disks"
 }
+
+variable "web_provision" {
+  type    = bool
+  default = true
+  description="ansible provision switch variable"
+}
