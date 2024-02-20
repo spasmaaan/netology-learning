@@ -100,7 +100,7 @@ storage ansible_host=<внешний ip-адрес> fqdn=<полное доме�
 ### Задание 7* (необязательное)
 Ваш код возвращает вам следущий набор данных: 
 ```
-> local.vpc
+> var.vpc
 {
   "network_id" = "enp7i560tb28nageq0cc"
   "subnet_ids" = [
@@ -121,7 +121,7 @@ storage ansible_host=<внешний ip-адрес> fqdn=<полное доме�
 
 Образец конечного результата:
 ```
-> { "network_id" = local.vpc.network_id, "subnet_id" = concat(slice(local.vpc.subnet_ids, 0, 2), slice(local.vpc.subnet_ids, 3, 4)), "subnet_zones" = concat(slice(local.vpc.subnet_zones, 0, 2), slice(local.vpc.subnet_zones, 3, 4)) }
+> { "network_id" = var.vpc.network_id, "subnet_id" = concat(slice(var.vpc.subnet_ids, 0, 2), slice(var.vpc.subnet_ids, 3, 4)), "subnet_zones" = concat(slice(var.vpc.subnet_zones, 0, 2), slice(var.vpc.subnet_zones, 3, 4)) }
 {
   "network_id" = "enp7i560tb28nageq0cc"
   "subnet_ids" = [

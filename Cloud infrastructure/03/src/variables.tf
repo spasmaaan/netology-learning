@@ -50,6 +50,13 @@ variable "vm_web_count" {
   description = "Number of web VMs"
 }
 
+variable "vm_db_names" {
+    type = map(string)
+    default = {
+        0 = "main", 
+        1 = "replica"
+    }
+}
 variable "count_vm" {
   type = object({
     platform_id        = string,
@@ -129,7 +136,31 @@ variable "disk_secondary" {
 }
 
 variable "web_provision" {
-  type    = bool
-  default = true
-  description="ansible provision switch variable"
+  type          = bool
+  default       = true
+  description   = "ansible provision switch variable"
+}
+
+variable "vpc" {
+    type = object({
+        network_id      = string
+        subnet_ids      = list(string)
+        subnet_zones    = list(string)
+    })
+    default = {
+        network_id = "enp7i560tb28nageq0cc"
+        subnet_ids = [
+            "e9b0le401619ngf4h68n",
+            "e2lbar6u8b2ftd7f5hia",
+            "b0ca48coorjjq93u36pl",
+            "fl8ner8rjsio6rcpcf0h",
+        ]
+        subnet_zones = [
+            "ru-central1-a",
+            "ru-central1-b",
+            "ru-central1-c",
+            "ru-central1-d",
+        ]
+    }
+    description = "Variable for task 7."
 }

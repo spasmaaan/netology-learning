@@ -1,8 +1,5 @@
 resource "yandex_compute_instance" "db" {
-  for_each = {
-    0 = "main", 
-    1 = "replica"
-  }
+  for_each = var.vm_db_names
   depends_on = [yandex_compute_instance.web]
 
   name        = each.value
