@@ -13,10 +13,12 @@
 1. Убедитесь, что у вас есть ssh ключ в ОС или создайте его с помощью команды ```ssh-keygen -t ed25519```
 **+**
 2. Создайте виртуальную машину Virtualbox с помощью Vagrant и [Vagrantfile](https://github.com/netology-code/virtd-homeworks/blob/shvirtd-1/05-virt-02-iaac/src/Vagrantfile) в директории src.
+**+**
 3. Зайдите внутрь ВМ и убедитесь, что Docker установлен с помощью команды:
 ```
 docker version && docker compose version
 ```
+**+**
 
 3. Если Vagrant выдаёт ошибку (блокировка трафика):
 ```
@@ -28,16 +30,11 @@ Error: The requested URL returned error: 404:
 
 - Скачайте с [сайта](https://app.vagrantup.com/bento/boxes/ubuntu-20.04) файл-образ "bento/ubuntu-20.04".
 - Добавьте его в список образов Vagrant: "vagrant box add bento/ubuntu-20.04 <путь к файлу>".
+**Произошла блокировка трафика, решение помогло.**
 
 **Важно:**    
 - Если ваша хостовая рабочая станция - это windows ОС, то у вас могут возникнуть проблемы со вложенной виртуализацией. Ознакомиться со cпособами решения можно [по ссылке](https://www.comss.ru/page.php?id=7726).
 **+**
-
-- Если вы устанавливали hyper-v или docker desktop, то  все равно может возникать ошибка:  
-`Stderr: VBoxManage: error: AMD-V VT-X is not available (VERR_SVM_NO_SVM)`   
- Попробуйте в этом случае выполнить в Windows от администратора команду `bcdedit /set hypervisorlaunchtype off` и перезагрузиться.
-
-- Если ваша рабочая станция в меру различных факторов не может запустить вложенную виртуализацию - допускается неполное выполнение(до ошибки запуска ВМ)
 
 ## Задача 3
 
