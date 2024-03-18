@@ -15,7 +15,11 @@ build {
   sources = ["source.yandex.debian_docker"]
 
   provisioner "shell" {
-    inline = ["echo 'hello from packer'"]
+    inline = [
+      "echo 'hello from packer'",
+      "sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin",
+      "sudo apt-get install -y htop tmux"
+    ]
   }
 
 }
