@@ -36,7 +36,7 @@ variable "vpc_name" {
 
 variable "vms_ssh_root_keyfile" {
   type        = string
-  default     = "~/.ssh/id_rsa.pub"
+  default     = "~/.ssh/id_ed25519.pub"
   description = "ssh-keygen -t ed25519"
 }
 
@@ -53,6 +53,12 @@ variable "vm_db_name" {
   type        = string
   default     = "netology-develop-platform-db"
   description = "example vm_db_ prefix"
+}
+
+variable "vm_cloud_init_file" {
+  type        = string
+  default     = "./cloud-init.yml"
+  description = "Cloud init for VM"
 }
 
 variable "vms_source" {

@@ -1,4 +1,6 @@
-module "analytics-vm" {
+
+/*
+module "analytics_vm" {
   source         = var.vms_source
   env_name       = var.vms_options.analitycs.env
   network_id     = yandex_vpc_network.develop.id
@@ -14,3 +16,4 @@ module "analytics-vm" {
     serial-port-enable = var.vms_options.analitycs.serial_port_enable
   }
 }
+*/
