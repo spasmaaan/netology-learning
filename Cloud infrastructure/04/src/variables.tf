@@ -4,6 +4,12 @@ variable "token" {
   description = "OAuth-token; https://cloud.yandex.ru/docs/iam/concepts/authorization/oauth-token"
 }
 
+variable "yc_keyfile" {
+  type        = string
+  default     = "~/.authorized_key.json"
+  description = "YC service account key file"
+}
+
 variable "cloud_id" {
   type        = string
   description = "https://cloud.yandex.ru/docs/resource-manager/operations/cloud/get-id"
@@ -28,16 +34,17 @@ variable "default_cidr" {
 variable "vpc_name" {
   type        = string
   default     = "develop"
-  description = "VPC network&subnet name"
+  description = "VPC network & subnet name"
 }
 
 ###common vars
 
-variable "vms_ssh_root_key" {
+variable "vms_ssh_root_keyfile" {
   type        = string
-  default     = "your_ssh_ed25519_key"
+  default     = "~/.ssh/id_rsa.pub"
   description = "ssh-keygen -t ed25519"
 }
+
 
 ###example vm_web var
 variable "vm_web_name" {
@@ -51,4 +58,39 @@ variable "vm_db_name" {
   type        = string
   default     = "netology-develop-platform-db"
   description = "example vm_db_ prefix"
+}
+
+variable "vms_source" {
+  type        = string
+  default     = "git::https://github.com/udjin10/yandex_compute_instance.git?ref=main"
+  description = "Remote module path"
+}
+
+variable "vms_options" {
+  type = map(object({
+    name               = string,
+    count              = number,
+    env_name           = string,
+    image_family       = string,
+    public_ip          = bool,
+    serial_port_enable = bool
+  }))
+  default = {
+    analitycs = {
+        name                = "analytics",
+        count               = 1,
+        env                 = "stage",
+        image_family        = "ubuntu-2004-lts",
+        public_ip           = true,
+        serial_port_enable  = true
+    },
+    marketing = {
+        name                = "marketing",
+        count               = 1,
+        env                 = "stage",
+        image_family        = "ubuntu-2004-lts",
+        public_ip           = true,
+        serial_port_enable  = true
+    }
+  }
 }

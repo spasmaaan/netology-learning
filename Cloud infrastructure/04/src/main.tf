@@ -7,3 +7,11 @@ resource "yandex_vpc_subnet" "develop" {
   network_id     = yandex_vpc_network.develop.id
   v4_cidr_blocks = var.default_cidr
 }
+
+data "template_file" "cloudinit" {
+  template = file("./cloud-init.yml")
+
+  vars = {
+    ssh_public_key = file(var.vms_ssh_root_keyfile)
+  }
+}
