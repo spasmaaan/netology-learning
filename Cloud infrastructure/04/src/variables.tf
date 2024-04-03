@@ -68,7 +68,7 @@ variable "vms_options" {
     env                = string,
     image_family       = string,
     public_ip          = bool,
-    serial_port_enable = bool
+    serial_port_enable = number
   }))
   default = {
     analitycs = {
