@@ -70,7 +70,7 @@ variable "vms_options" {
   type = map(object({
     name               = string,
     count              = number,
-    env_name           = string,
+    env                = string,
     image_family       = string,
     public_ip          = bool,
     serial_port_enable = bool
