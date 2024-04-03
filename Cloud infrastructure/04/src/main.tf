@@ -16,9 +16,9 @@ module "vpc_dev" {
 module "analytics_vm" {
   source         = "git::https://github.com/udjin10/yandex_compute_instance.git?ref=main"
   env_name       = var.vms_options.analitycs.env
-  network_id     = yandex_vpc_network.develop.id
+  network_id     = module.vpc_dev.network.id
   subnet_zones   = [var.default_zone]
-  subnet_ids     = [yandex_vpc_subnet.develop.id]
+  subnet_ids     = [module.vpc_dev.subnet.id]
   instance_name  = var.vms_options.analitycs.name
   labels         = { 
     project: var.vms_options.analitycs.name 
@@ -36,9 +36,9 @@ module "analytics_vm" {
 module "marketing_vm" {
   source         = "git::https://github.com/udjin10/yandex_compute_instance.git?ref=main"
   env_name       = var.vms_options.marketing.env
-  network_id     = yandex_vpc_network.develop.id
+  network_id     = module.vpc_dev.network.id
   subnet_zones   = [var.default_zone]
-  subnet_ids     = [yandex_vpc_subnet.develop.id]
+  subnet_ids     = [module.vpc_dev.subnet.id]
   instance_name  = var.vms_options.marketing.name
   labels         = { 
     project: var.vms_options.marketing.name 

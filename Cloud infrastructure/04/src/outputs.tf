@@ -1,4 +1,7 @@
 output "vpc_dev_list" {
-    value = module.vpc_dev.vpc_info
+    value = {
+        network = module.vpc_dev.network,
+        subnet  = module.vpc_dev.subnet
+    }
     description = "Dev VMs info"
 }
