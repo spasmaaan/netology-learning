@@ -61,12 +61,6 @@ variable "vm_cloud_init_file" {
   description = "Cloud init for VM"
 }
 
-variable "vms_source" {
-  type        = string
-  default     = "git::https://github.com/udjin10/yandex_compute_instance.git?ref=main"
-  description = "Remote module path"
-}
-
 variable "vms_options" {
   type = map(object({
     name               = string,

@@ -17,7 +17,7 @@ data "template_file" "cloudinit" {
 }
 
 module "analytics_vm" {
-  source         = var.vms_source
+  source         = "git::https://github.com/udjin10/yandex_compute_instance.git?ref=main"
   env_name       = var.vms_options.analitycs.env
   network_id     = yandex_vpc_network.develop.id
   subnet_zones   = [var.default_zone]
@@ -34,7 +34,7 @@ module "analytics_vm" {
 }
 
 module "marketing_vm" {
-  source         = var.vms_source
+  source         = "git::https://github.com/udjin10/yandex_compute_instance.git?ref=main"
   env_name       = var.vms_options.marketing.env
   network_id     = yandex_vpc_network.develop.id
   subnet_zones   = [var.default_zone]
