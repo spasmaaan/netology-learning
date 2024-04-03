@@ -23,6 +23,7 @@ module "analytics_vm" {
   subnet_zones   = [var.default_zone]
   subnet_ids     = [yandex_vpc_subnet.develop.id]
   instance_name  = var.vms_options.analitycs.name
+  labels         = var.vms_options.analitycs.name
   instance_count = var.vms_options.analitycs.count
   image_family   = var.vms_options.analitycs.image_family
   public_ip      = var.vms_options.analitycs.public_ip
@@ -40,6 +41,7 @@ module "marketing_vm" {
   subnet_zones   = [var.default_zone]
   subnet_ids     = [yandex_vpc_subnet.develop.id]
   instance_name  = var.vms_options.marketing.name
+  labels         = var.vms_options.marketing.name
   instance_count = var.vms_options.marketing.count
   image_family   = var.vms_options.marketing.image_family
   public_ip      = var.vms_options.marketing.public_ip

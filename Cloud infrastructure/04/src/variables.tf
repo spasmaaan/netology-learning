@@ -77,7 +77,7 @@ variable "vms_options" {
         env                 = "stage",
         image_family        = "ubuntu-2004-lts",
         public_ip           = true,
-        serial_port_enable  = true
+        serial_port_enable  = 1
     },
     marketing = {
         name                = "marketing",
@@ -85,7 +85,7 @@ variable "vms_options" {
         env                 = "stage",
         image_family        = "ubuntu-2004-lts",
         public_ip           = true,
-        serial_port_enable  = true
+        serial_port_enable  = 1
     }
   }
 }
