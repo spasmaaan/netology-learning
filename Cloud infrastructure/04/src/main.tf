@@ -1,19 +1,16 @@
-resource "yandex_vpc_network" "develop" {
-  name = var.vpc_name
-}
-resource "yandex_vpc_subnet" "develop" {
-  name           = var.vpc_name
-  zone           = var.default_zone
-  network_id     = yandex_vpc_network.develop.id
-  v4_cidr_blocks = var.default_cidr
-}
-
 data "template_file" "cloudinit" {
   template = file(var.vm_cloud_init_file)
 
   vars = {
     ssh_public_key = file(var.vms_ssh_root_keyfile)
   }
+}
+
+module "vpc_dev" {
+  source       = "./vpc"
+  name         = var.vpc_name
+  zone         = var.default_zone
+  cidr         = var.default_cidr
 }
 
 module "analytics_vm" {
