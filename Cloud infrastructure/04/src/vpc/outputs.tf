@@ -3,7 +3,7 @@ output "network" {
     description = "VPC network"
 }
 
-output "subnet" {
+output "subnets" {
     value = yandex_vpc_subnet.develop
     description = "VPC subnet"
 }
