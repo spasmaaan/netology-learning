@@ -26,12 +26,6 @@ variable "default_cidr" {
   description = "https://cloud.yandex.ru/docs/vpc/operations/subnet-create"
 }
 
-variable "vpc_name" {
-  type        = string
-  default     = "develop"
-  description = "VPC network & subnet name"
-}
-
 ###common vars
 
 variable "vms_ssh_root_keyfile" {
