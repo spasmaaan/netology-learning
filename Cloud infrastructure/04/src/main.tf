@@ -49,7 +49,7 @@ module "marketing_vm" {
   env_name       = var.vms_options.marketing.env
   network_id     = module.vpc_dev.network.id
   subnet_zones   = [var.default_zone]
-  subnet_ids     = [module.vpc_dev.subnet.id]
+  subnet_ids     = [module.vpc_dev.subnets[0].id]
   instance_name  = var.vms_options.marketing.name
   labels         = { 
     project: var.vms_options.marketing.name 
