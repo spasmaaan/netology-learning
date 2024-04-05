@@ -63,3 +63,30 @@ module "marketing_vm" {
     serial-port-enable = var.vms_options.marketing.serial_port_enable
   }
 }
+
+
+module "db_cluster" {
+  source       = "./mysql_cluster"
+  name         = "example"
+  environment  = "develop"
+  HA           = local.db_cluster_ha
+  network_id   = local.db_cluster_ha ? module.vpc_prod.network.id : module.vpc_dev.network.id
+  hosts        = local.db_cluster_ha ? [{ 
+    subnet_id = module.vpc_prod.subnets[0].id, 
+    zone = module.vpc_prod.subnets[0].zone
+  }, { 
+    subnet_id = module.vpc_prod.subnets[1].id, 
+    zone = module.vpc_prod.subnets[1].zone
+  }] : [{ 
+    subnet_id = module.vpc_dev.subnets[0].id, 
+    zone = module.vpc_dev.subnets[0].zone
+  }]
+}
+
+module "db_cluster_data" {
+  source       = "./mysql_data"
+  cluster_id   = module.db_cluster.cluster.id
+  database     = "test"
+  user         = "user"
+  password     = "secret_pass"  
+}
