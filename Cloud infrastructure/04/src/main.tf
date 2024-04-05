@@ -64,7 +64,7 @@ module "marketing_vm" {
   }
 }
 
-
+/*
 module "db_cluster" {
   source       = "./mysql_cluster"
   name         = "example"
@@ -90,3 +90,4 @@ module "db_cluster_data" {
   user         = "app"
   password     = "secret_pass"  
 }
+*/
