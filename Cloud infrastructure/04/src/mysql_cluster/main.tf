@@ -1,6 +1,6 @@
 resource "yandex_mdb_mysql_cluster" "cluster" {
   name        = var.name
-  environment = var.environment
+  environment = var.HA ? "PRODUCTION" : "PRESTABLE"
   network_id  = var.network_id
   version     = "8.0"
 
