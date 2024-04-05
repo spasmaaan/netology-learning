@@ -14,6 +14,7 @@ variable "user" {
 }
 
 variable "password" {
-    type        = security
+    type        = string
+    sensitive   = true
     description = "Password for the user."
 }
