@@ -87,6 +87,6 @@ module "db_cluster_data" {
   source       = "./mysql_data"
   cluster_id   = module.db_cluster.cluster.id
   database     = "test"
-  user         = "user"
+  user         = "app"
   password     = "secret_pass"  
 }

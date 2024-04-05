@@ -1,3 +1,3 @@
 locals {
-    db_cluster_ha = false
+    db_cluster_ha = true
 }
