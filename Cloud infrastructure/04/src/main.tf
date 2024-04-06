@@ -100,3 +100,7 @@ module "s3" {
   max_size       = 1073741824
 }
 */
+
+data "vault_generic_secret" "vault_example" {
+  path = "secret/example"
+}
