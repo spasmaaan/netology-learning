@@ -3,6 +3,7 @@ terraform {
     yandex = {
       source = "yandex-cloud/yandex"
     }
+    /*
     aws = {
       source  = "hashicorp/aws"
       version = "> 5.1"
@@ -11,6 +12,7 @@ terraform {
       source  = "hashicorp/random"
       version = "> 3.5"
     }
+    */
   }
   required_version = ">=1.3.0"
 }
@@ -22,8 +24,10 @@ provider "yandex" {
   zone                      = var.default_zone
 }
 
+/*
 provider "aws" {
   skip_region_validation      = true
   skip_credentials_validation = true
   skip_requesting_account_id  = true
 }
+*/

@@ -92,9 +92,11 @@ module "db_cluster_data" {
 }
 */
 
+/*
 module "s3" {
   source         = "git::https://github.com/terraform-yc-modules/terraform-yc-s3.git?ref=master"
   bucket_name    = var.s3_bucket_name
   // 1 Gb
   max_size       = 1073741824
 }
+*/
