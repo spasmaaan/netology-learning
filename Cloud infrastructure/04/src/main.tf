@@ -104,3 +104,17 @@ module "s3" {
 data "vault_generic_secret" "vault_example" {
   path = "secret/example"
 }
+
+resource "vault_mount" "example" {
+  path        = "secret/example"
+  type        = "kv"
+  options     = { version = "1" }
+  description = "KV Version 1 secret engine mount"
+}
+
+resource "vault_kv_secret" "secret" {
+  path = vault_mount.example.path
+  data_json = jsonencode({
+    test2   = "congrats!2"
+  })
+}
