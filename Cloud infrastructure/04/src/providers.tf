@@ -5,9 +5,14 @@ terraform {
     }
     aws = {
       source  = "hashicorp/aws"
+      version = "> 5.1"
+    }
+    random = {
+      source  = "hashicorp/random"
+      version = "> 3.5"
     }
   }
-  required_version = ">=0.13"
+  required_version = ">=1.3.0"
 }
 
 provider "yandex" {
@@ -15,4 +20,10 @@ provider "yandex" {
   cloud_id                  = var.cloud_id
   folder_id                 = var.folder_id 
   zone                      = var.default_zone
+}
+
+provider "aws" {
+  skip_region_validation      = true
+  skip_credentials_validation = true
+  skip_requesting_account_id  = true
 }
