@@ -105,15 +105,15 @@ data "vault_generic_secret" "vault_example" {
   path = "secret/example"
 }
 
-resource "vault_mount" "secret" {
-  path        = "secret"
+resource "vault_mount" "secret2" {
+  path        = "secret2"
   type        = "kv"
   options     = { version = "1" }
   description = "KV Version 1 secret engine mount"
 }
 
-resource "vault_kv_secret" "secret" {
-  path = "${vault_mount.secret.path}/example"
+resource "vault_kv_secret" "example" {
+  path = "${vault_mount.secret2.path}/example"
   data_json = jsonencode({
     test2   = "congrats!2"
   })
