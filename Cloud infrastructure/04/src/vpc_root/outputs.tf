@@ -8,3 +8,8 @@ output "prod" {
     description = "VPC Prod"
 }
 
+output "zone" {
+    value = var.default_zone
+    description = "Default zone"
+}
+
