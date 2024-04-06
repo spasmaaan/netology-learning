@@ -16,9 +16,9 @@ data "template_file" "cloudinit" {
 module "analytics_vm" {
   source         = "git::https://github.com/udjin10/yandex_compute_instance.git?ref=main"
   env_name       = var.vms_options.analitycs.env
-  network_id     = data.terraform_remote_state.module.vpc_dev.network.id
-  subnet_zones   = [data.terraform_remote_state.var.default_zone]
-  subnet_ids     = [data.terraform_remote_state.module.vpc_dev.subnets[0].id]
+  network_id     = data.terraform_remote_state.vpc.outputs.dev.value.network.id
+  subnet_zones   = [data.terraform_remote_state.vpc.outputs.zone]
+  subnet_ids     = [data.terraform_remote_state.vpc.outputs.dev.value.subnets[0].id]
   instance_name  = var.vms_options.analitycs.name
   labels         = { 
     project: var.vms_options.analitycs.name 
@@ -36,9 +36,9 @@ module "analytics_vm" {
 module "marketing_vm" {
   source         = "git::https://github.com/udjin10/yandex_compute_instance.git?ref=main"
   env_name       = var.vms_options.marketing.env
-  network_id     = data.terraform_remote_state.module.vpc_dev.network.id
-  subnet_zones   = [data.terraform_remote_state.var.default_zone]
-  subnet_ids     = [data.terraform_remote_state.module.vpc_dev.subnets[0].id]
+  network_id     = data.terraform_remote_state.vpc.outputs.dev.value.network.id
+  subnet_zones   = [data.terraform_remote_state.vpc.outputs.zone]
+  subnet_ids     = [data.terraform_remote_state.vpc.outputs.dev.value.subnets[0].id]
   instance_name  = var.vms_options.marketing.name
   labels         = { 
     project: var.vms_options.marketing.name 
@@ -59,16 +59,16 @@ module "db_cluster" {
   name         = "example"
   environment  = "develop"
   HA           = local.db_cluster_ha
-  network_id   = local.db_cluster_ha ? data.terraform_remote_state.module.vpc_prod.network.id : data.terraform_remote_state.module.vpc_dev.network.id
+  network_id   = local.db_cluster_ha ? data.terraform_remote_state.vpc.outputs.prod.network.id : data.terraform_remote_state.vpc.outputs.dev.value.network.id
   hosts        = local.db_cluster_ha ? [{ 
-    subnet_id = data.terraform_remote_state.module.vpc_prod.subnets[0].id, 
-    zone = data.terraform_remote_state.module.vpc_prod.subnets[0].zone
+    subnet_id = data.terraform_remote_state.vpc.outputs.prod.subnets[0].id, 
+    zone = data.terraform_remote_state.vpc.outputs.prod.subnets[0].zone
   }, { 
-    subnet_id = data.terraform_remote_state.module.vpc_prod.subnets[1].id, 
-    zone = data.terraform_remote_state.module.vpc_prod.subnets[1].zone
+    subnet_id = data.terraform_remote_state.vpc.outputs.prod.subnets[1].id, 
+    zone = data.terraform_remote_state.vpc.outputs.prod.subnets[1].zone
   }] : [{ 
-    subnet_id = data.terraform_remote_state.module.vpc_prod.subnets[0].id, 
-    zone = data.terraform_remote_state.module.vpc_prod.subnets[0].zone
+    subnet_id = data.terraform_remote_state.vpc.outputs.prod.subnets[0].id, 
+    zone = data.terraform_remote_state.vpc.outputs.prod.subnets[0].zone
   }]
 }
 
