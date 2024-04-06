@@ -86,6 +86,6 @@ variable "vms_options" {
 
 variable "s3_bucket_name" {
   type        = string
-  default     = "s3_test"
+  default     = "s3-test"
   description = "S3 bucket name."
 }
