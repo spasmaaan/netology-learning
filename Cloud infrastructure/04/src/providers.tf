@@ -3,6 +3,9 @@ terraform {
     yandex = {
       source = "yandex-cloud/yandex"
     }
+    aws = {
+      source  = "hashicorp/aws"
+    }
   }
   required_version = ">=0.13"
 }
