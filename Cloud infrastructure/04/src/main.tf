@@ -91,3 +91,10 @@ module "db_cluster_data" {
   password     = "secret_pass"  
 }
 */
+
+module "s3" {
+  source         = "git::https://github.com/terraform-yc-modules/terraform-yc-s3.git?ref=main"
+  bucket_name    = var.s3_bucket_name
+  // 1 Gb
+  max_size       = 1073741824
+}
