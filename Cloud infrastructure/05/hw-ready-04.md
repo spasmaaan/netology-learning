@@ -11,7 +11,13 @@
 1. Возьмите код:
 - из [ДЗ к лекции 4](https://github.com/netology-code/ter-homeworks/tree/main/04/src),
 - из [демо к лекции 4](https://github.com/netology-code/ter-homeworks/tree/main/04/demonstration1).
+
+**+**
+
 2. Проверьте код с помощью tflint и checkov. Вам не нужно инициализировать этот проект.
+
+**+**
+
 3. Перечислите, какие **типы** ошибок обнаружены в проекте (без дублей).
 
 * **demonstration1**:
@@ -19,12 +25,15 @@
     * Missing version constraint for provider "template" in `required_providers` (terraform_required_providers)
     * Missing version constraint for provider "yandex" in `required_providers` (terraform_required_providers)
     * [Fixable] variable "public_key" is declared but not used (terraform_unused_declarations)
+    * CKV_YC_4: "Ensure compute instance does not have serial console enabled."
+    * CKV_YC_11: "Ensure security group is assigned to network interface."
+    * CKV_YC_2: "Ensure compute instance does not have public IP."
+    * CKV_TF_1: "Ensure Terraform module sources use a commit hash"
 * **src**:
     * Missing version constraint for provider "yandex" in `required_providers` (terraform_required_providers)
     * [Fixable] variable "vms_ssh_root_key" is declared but not used (terraform_unused_declarations)
     * [Fixable] variable "vm_web_name" is declared but not used (terraform_unused_declarations)
     * [Fixable] variable "vm_db_name" is declared but not used (terraform_unused_declarations) 
-
 **+**
 
 ------
