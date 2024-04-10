@@ -42,11 +42,35 @@
 
 1. Возьмите ваш GitHub-репозиторий с **выполненным ДЗ 4** в ветке 'terraform-04' и сделайте из него ветку 'terraform-05'.
 2. Повторите демонстрацию лекции: настройте YDB, S3 bucket, yandex service account, права доступа и мигрируйте state проекта в S3 с блокировками. Предоставьте скриншоты процесса в качестве ответа.
+
+**Yandex DB**
+
+![02_2_ydb](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Cloud%20infrastructure/04/02_2_ydb.png?raw=true)
+
+**S3 bucket**
+
+![02_2_s3_bucket](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Cloud%20infrastructure/04/02_2_s3_bucket.png?raw=true)
+
+**Service account**
+
+![02_2_service_account](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Cloud%20infrastructure/04/02_2_service_account.png?raw=true)
+
+**Init modules**
+
+![02_2_init_modules](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Cloud%20infrastructure/04/02_2_init_modules.png?raw=true)
+
 3. Закоммитьте в ветку 'terraform-05' все изменения.
 4. Откройте в проекте terraform console, а в другом окне из этой же директории попробуйте запустить terraform apply.
+
+![02_4_console](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Cloud%20infrastructure/04/02_4_console.png?raw=true)
+
 5. Пришлите ответ об ошибке доступа к state.
+
+![02_5_apply](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Cloud%20infrastructure/04/02_5_apply.png?raw=true)
+
 6. Принудительно разблокируйте state. Пришлите команду и вывод.
 
+![02_6_force-unlock](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Cloud%20infrastructure/04/02_6_force-unlock.png?raw=true)
 
 ------
 
