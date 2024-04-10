@@ -15,6 +15,8 @@ resource "yandex_mdb_mysql_cluster" "cluster" {
     content {
       zone      = host.value.zone
       subnet_id = host.value.subnet_id
+      public_ip = false
+      security_group_ids = [yandex_vpc_security_group.develop.id]
     }
   }
 }

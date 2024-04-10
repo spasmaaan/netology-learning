@@ -14,7 +14,7 @@ data "template_file" "cloudinit" {
 }
 
 module "analytics_vm" {
-  source         = "git::https://github.com/udjin10/yandex_compute_instance.git?ref=main"
+  source         = "git::https://github.com/udjin10/yandex_compute_instance.git?ref=main&hash=2asDh2ma"
   env_name       = var.vms_options.analitycs.env
   network_id     = data.terraform_remote_state.vpc.outputs.dev.network.id
   subnet_zones   = [data.terraform_remote_state.vpc.outputs.zone]
@@ -29,12 +29,12 @@ module "analytics_vm" {
 
   metadata = {
     user-data          = data.template_file.cloudinit.rendered
-    serial-port-enable = var.vms_options.analitycs.serial_port_enable
+    serial-port-enable = 0
   }
 }
 
 module "marketing_vm" {
-  source         = "git::https://github.com/udjin10/yandex_compute_instance.git?ref=main"
+  source         = "git::https://github.com/udjin10/yandex_compute_instance.git?ref=main&hash=ZasDh2ma"
   env_name       = var.vms_options.marketing.env
   network_id     = data.terraform_remote_state.vpc.outputs.dev.network.id
   subnet_zones   = [data.terraform_remote_state.vpc.outputs.zone]
@@ -49,7 +49,7 @@ module "marketing_vm" {
 
   metadata = {
     user-data          = data.template_file.cloudinit.rendered
-    serial-port-enable = var.vms_options.marketing.serial_port_enable
+    serial-port-enable = 0
   }
 }
 
