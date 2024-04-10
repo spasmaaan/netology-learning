@@ -23,21 +23,6 @@ variable "vms_ssh_root_keyfile" {
   description = "ssh-keygen -t ed25519"
 }
 
-
-###example vm_web var
-variable "vm_web_name" {
-  type        = string
-  default     = "netology-develop-platform-web"
-  description = "example vm_web_ prefix"
-}
-
-###example vm_db var
-variable "vm_db_name" {
-  type        = string
-  default     = "netology-develop-platform-db"
-  description = "example vm_db_ prefix"
-}
-
 variable "vm_cloud_init_file" {
   type        = string
   default     = "./cloud-init.yml"
@@ -71,10 +56,4 @@ variable "vms_options" {
         serial_port_enable  = 1
     }
   }
-}
-
-variable "s3_bucket_name" {
-  type        = string
-  default     = "s3-test"
-  description = "S3 bucket name."
 }

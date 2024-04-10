@@ -35,6 +35,7 @@ provider "yandex" {
   cloud_id                  = var.cloud_id
   folder_id                 = var.folder_id 
   zone                      = data.terraform_remote_state.vpc.outputs.zone
+  version                   = "> 0.1"
 }
 
 /*
