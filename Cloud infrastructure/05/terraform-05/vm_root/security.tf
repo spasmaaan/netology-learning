@@ -1,6 +1,6 @@
 resource "yandex_vpc_security_group" "develop" {
-  name       = local.vpc_security_group_name
-  network_id = yandex_vpc_network.develop.id
+  name       = var.vpc_security_group_name
+  network_id = data.terraform_remote_state.vpc.outputs.dev.network.id
   folder_id  = var.folder_id
 
   dynamic "ingress" {

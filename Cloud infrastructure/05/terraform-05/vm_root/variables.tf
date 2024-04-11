@@ -106,3 +106,9 @@ variable "security_group_egress" {
     }
   ]
 }
+
+variable "vpc_security_group_name" {
+  type = string
+  default = "vpc-security-group"
+  description = "VPC security group name"
+}
