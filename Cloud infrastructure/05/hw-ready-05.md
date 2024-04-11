@@ -94,10 +94,17 @@
 
 Модуль **root_vm**:
 
+![03_2_plan_vm_1](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Cloud%20infrastructure/04/03_2_plan_vm_1.png?raw=true)
 
+![03_2_plan_vm_2](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Cloud%20infrastructure/04/03_2_plan_vm_2.png?raw=true)
+
+![03_2_plan_vm_3](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Cloud%20infrastructure/04/03_2_plan_vm_3.png?raw=true)
+
+![03_2_plan_vm_4](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Cloud%20infrastructure/04/03_2_plan_vm_4.png?raw=true)
 
 5. Пришлите ссылку на PR для ревью. Вливать код в 'terraform-05' не нужно.
 
+**PR**: https://github.com/spasmaaan/netology-learning/pull/1
 
 ------
 
