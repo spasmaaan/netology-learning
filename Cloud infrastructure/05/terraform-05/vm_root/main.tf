@@ -14,7 +14,7 @@ data "template_file" "cloudinit" {
 }
 
 module "analytics_vm" {
-  source         = "git::https://github.com/udjin10/yandex_compute_instance.git?ref=main&hash=2asDh2ma"
+  source         = "git::https://github.com/udjin10/yandex_compute_instance.git?ref=282797c08889fb2ab78c1ac69fcd435453df860d"
   env_name       = var.vms_options.analitycs.env
   network_id     = data.terraform_remote_state.vpc.outputs.dev.network.id
   subnet_zones   = [data.terraform_remote_state.vpc.outputs.zone]
@@ -25,16 +25,17 @@ module "analytics_vm" {
   }
   instance_count = var.vms_options.analitycs.count
   image_family   = var.vms_options.analitycs.image_family
-  public_ip      = var.vms_options.analitycs.public_ip
+  public_ip      = false
+  security_group_ids = [yandex_vpc_security_group.develop.id]
 
   metadata = {
     user-data          = data.template_file.cloudinit.rendered
-    serial-port-enable = 0
+    serial-port-enable = null
   }
 }
 
 module "marketing_vm" {
-  source         = "git::https://github.com/udjin10/yandex_compute_instance.git?ref=main&hash=ZasDh2ma"
+  source         = "git::https://github.com/udjin10/yandex_compute_instance.git?ref=282797c08889fb2ab78c1ac69fcd435453df860d"
   env_name       = var.vms_options.marketing.env
   network_id     = data.terraform_remote_state.vpc.outputs.dev.network.id
   subnet_zones   = [data.terraform_remote_state.vpc.outputs.zone]
@@ -45,11 +46,12 @@ module "marketing_vm" {
   }
   instance_count = var.vms_options.marketing.count
   image_family   = var.vms_options.marketing.image_family
-  public_ip      = var.vms_options.marketing.public_ip
+  public_ip      = false
+  security_group_ids = [yandex_vpc_security_group.develop.id]
 
   metadata = {
     user-data          = data.template_file.cloudinit.rendered
-    serial-port-enable = 0
+    serial-port-enable = null
   }
 }
 
@@ -70,6 +72,7 @@ module "db_cluster" {
     subnet_id = data.terraform_remote_state.vpc.outputs.prod.subnets[0].id, 
     zone = data.terraform_remote_state.vpc.outputs.prod.subnets[0].zone
   }]
+  security_group_id = yandex_vpc_security_group.develop.id
 }
 
 module "db_cluster_data" {
@@ -83,7 +86,7 @@ module "db_cluster_data" {
 
 /*
 module "s3" {
-  source         = "git::https://github.com/terraform-yc-modules/terraform-yc-s3.git?ref=master"
+  source         = "git::https://github.com/terraform-yc-modules/terraform-yc-s3.git?ref=9fc2f832875aefb6051a2aa47b5ecc9a7ea8fde5" # Fixed version by commit
   bucket_name    = var.s3_bucket_name
   // 1 Gb
   max_size       = 1073741824
