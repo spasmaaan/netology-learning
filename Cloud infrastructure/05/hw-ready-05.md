@@ -85,6 +85,17 @@
 
 3. Откройте новый pull request 'terraform-hotfix' --> 'terraform-05'. 
 4. Вставьте в комментарий PR результат анализа tflint и checkov, план изменений инфраструктуры из вывода команды terraform plan.
+
+Модуль **root_vpc**:
+
+![03_2_plan_vpc_1](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Cloud%20infrastructure/04/03_2_plan_vpc_1.png?raw=true)
+
+![03_2_plan_vpc_2](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Cloud%20infrastructure/04/03_2_plan_vpc_2.png?raw=true)
+
+Модуль **root_vm**:
+
+
+
 5. Пришлите ссылку на PR для ревью. Вливать код в 'terraform-05' не нужно.
 
 
