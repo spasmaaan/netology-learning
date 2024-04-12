@@ -28,9 +28,9 @@ variable "task_4_2" {
   type        = set(string) 
   description = "Список IP адресов"
   validation {
-    condition = can(alltrue([
-      for ip in var.task_4_2 : cidrhost("${ip}/32", "0")
-    ]))
+    condition = alltrue([
+      for ip in var.task_4_2 : can(cidrhost("${ip}/32", "0"))
+    ])
     error_message = "Список содержит хотя бы один неправильный IP адрес."
   }
 }
@@ -39,7 +39,7 @@ variable "task_5_1" {
   type        = string 
   description = "любая строка"
   validation {
-    condition = can(regex("^[a-z ]+$", var.task_5_1))
+    condition = can(regex("^[a-zа-я ]+$", var.task_5_1))
     error_message = "Строка содержит символы верхнего регистра или недопустимые символы."
   }
 }
@@ -58,6 +58,6 @@ variable "in_the_end_there_can_be_only_one" {
 
     validation {
         error_message = "There can be only one MacLeod"
-        condition = can(tobool(var.in_the_end_there_can_be_only_one.Duncan) != tobool(var.in_the_end_there_can_be_only_one.Duncan))
+        condition = (var.in_the_end_there_can_be_only_one.Dunkan == true) != (var.in_the_end_there_can_be_only_one.Connor == true)
     }
 }
