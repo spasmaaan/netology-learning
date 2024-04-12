@@ -81,7 +81,7 @@
 
 ![03_2_check_checkov_1](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Cloud%20infrastructure/05/03_2_check_checkov_1.png?raw=true)
 
-![03_2_check_checkov_2](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Cloud%20infrastructure/05/03_2_check_checkov_1.png?raw=true)
+![03_2_check_checkov_2](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Cloud%20infrastructure/05/03_2_check_checkov_2.png?raw=true)
 
 Модуль **root_vpc**:
 
