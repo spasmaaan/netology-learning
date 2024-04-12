@@ -79,12 +79,26 @@
 1. Сделайте в GitHub из ветки 'terraform-05' новую ветку 'terraform-hotfix'.
 2. Проверье код с помощью tflint и checkov, исправьте все предупреждения и ошибки в 'terraform-hotfix', сделайте коммит.
 
-![03_2_tslint](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Cloud%20infrastructure/05/03_2_tslint.png?raw=true)
+![03_2_check_checkov_1](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Cloud%20infrastructure/05/03_2_check_checkov_1.png?raw=true)
 
-![03_2_checkov](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Cloud%20infrastructure/05/03_2_checkov.png?raw=true)
+![03_2_check_checkov_2](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Cloud%20infrastructure/05/03_2_check_checkov_1.png?raw=true)
+
+Модуль **root_vpc**:
+
+![03_2_check_tslint_3](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Cloud%20infrastructure/05/03_2_check_tslint_3.png?raw=true)
+
+Модуль **root_vm**:
+
+![03_2_check_tslint_1](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Cloud%20infrastructure/05/03_2_check_tslint_1.png?raw=true)
+
+![03_2_check_tslint_2](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Cloud%20infrastructure/05/03_2_check_tslint_2.png?raw=true)
 
 3. Откройте новый pull request 'terraform-hotfix' --> 'terraform-05'. 
 4. Вставьте в комментарий PR результат анализа tflint и checkov, план изменений инфраструктуры из вывода команды terraform plan.
+
+![03_2_tslint](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Cloud%20infrastructure/05/03_2_tslint.png?raw=true)
+
+![03_2_checkov](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Cloud%20infrastructure/05/03_2_checkov.png?raw=true)
 
 Модуль **root_vpc**:
 
