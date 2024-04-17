@@ -1,4 +1,6 @@
 version: "3"
+include:
+  - docker-compose.yaml
 services:
   portainer:
     image: portainer/portainer-ce:latest
