@@ -12,7 +12,7 @@
 - скачайте образ nginx:1.21.1;
 
 ```bash
-docker build -t "spasman/custom-nginx:1.0.0" .
+docker build -t "spasmaaan/custom-nginx:1.0.0" .
 ```
 
 - Создайте Dockerfile и реализуйте в нем замену дефолтной индекс-страницы(/usr/share/nginx/html/index.html), на файл index.html с содержимым:
@@ -184,17 +184,27 @@ services:
 По умолчанию будет выполняться файл `compose.yaml`.
 При его отсутсвии произойдёт попытка выполнить `docker-compose.yaml`.
 
+![05_1_up](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Virtualization%20and%20containerization/03/05_1_up.png?raw=true)
+
 2. Отредактируйте файл compose.yaml так, чтобы были запущенны оба файла. (подсказка: https://docs.docker.com/compose/compose-file/14-include/)
 
+Добавлено в `compose.yaml`:
+```yaml
+...
+include:
+  - docker-compose.yaml
+...
+```
 
+![05_2_fix_compose](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Virtualization%20and%20containerization/03/05_2_fix_compose.png?raw=true)
 
 3. Выполните в консоли вашей хостовой ОС необходимые команды чтобы залить образ custom-nginx как custom-nginx:latest в запущенное вами, локальное registry. Дополнительная документация: https://distribution.github.io/distribution/about/deploying/
 
-
+![05_3_local_registry](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Virtualization%20and%20containerization/03/05_3_local_registry.png?raw=true)
 
 4. Откройте страницу "https://127.0.0.1:9000" и произведите начальную настройку portainer.(логин и пароль адмнистратора)
 
-
+**+**
 
 5. Откройте страницу "http://127.0.0.1:9000/#!/home", выберите ваше local  окружение. Перейдите на вкладку "stacks" и в "web editor" задеплойте следующий компоуз:
 
@@ -208,15 +218,17 @@ services:
       - "9090:80"
 ```
 
-
+![05_5_custom_stack](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Virtualization%20and%20containerization/03/05_5_custom_stack.png?raw=true)
 
 
 6. Перейдите на страницу "http://127.0.0.1:9000/#!/2/docker/containers", выберите контейнер с nginx и нажмите на кнопку "inspect". В представлении <> Tree разверните поле "Config" и сделайте скриншот от поля "AppArmorProfile" до "Driver".
 
+![05_6_inspect](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Virtualization%20and%20containerization/03/05_6_inspect.png?raw=true)
 
 
 7. Удалите любой из манифестов компоуза(например compose.yaml).  Выполните команду "docker compose up -d". Прочитайте warning, объясните суть предупреждения и выполните предложенное действие. Погасите compose-проект ОДНОЙ(обязательно!!) командой.
 
+При пропаже compose.yaml docker вычислил, что конфигурация контейнеров изменилась.
+Warning предлагает удалить устаревшие контейнеры, если будет добавлен аргумент `--remove-orphans`.
 
-
-В качестве ответа приложите скриншоты консоли, где видно все введенные команды и их вывод, файл compose.yaml , скриншот portainer c задеплоенным компоузом.
+![05_7_orphans](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Virtualization%20and%20containerization/03/05_7_orphans.png?raw=true)
