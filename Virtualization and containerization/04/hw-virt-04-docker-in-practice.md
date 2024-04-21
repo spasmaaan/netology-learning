@@ -48,11 +48,19 @@ See 'snap info docker' for additional versions.
 
 2. Настройте аутентификацию вашего локального docker в yandex container registry.
 
+![02_1_create](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Virtualization%20and%20containerization/04/02_1_create.png?raw=true)
+
 3. Соберите и залейте в него образ с python приложением из задания №1.
+
+![02_3_build](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Virtualization%20and%20containerization/04/02_3_build.png?raw=true)
 
 4. Просканируйте образ на уязвимости.
 
+![02_4_security_scan](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Virtualization%20and%20containerization/04/02_4_security_scan.png?raw=true)
+
 5. В качестве ответа приложите отчет сканирования.
+
+![02_5_scan_result](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Virtualization%20and%20containerization/04/02_5_scan_result.png?raw=true)
 
 
 ## Задача 3
