@@ -133,17 +133,26 @@ See 'snap info docker' for additional versions.
 
 
 ## Задача 6
+
 Скачайте docker образ ```hashicorp/terraform:latest``` и скопируйте бинарный файл ```/bin/terraform``` на свою локальную машину, используя dive и docker save.
-Предоставьте скриншоты  действий .
+
+![06_1_pull](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Virtualization%20and%20containerization/04/06_1_pull.png?raw=true)
+![06_2_run](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Virtualization%20and%20containerization/04/06_2_run.png?raw=true)
+![06_3_dive](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Virtualization%20and%20containerization/04/06_3_dive.png?raw=true)
+![06_4_copy](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Virtualization%20and%20containerization/04/06_4_copy.png?raw=true)
+
 
 ## Задача 6.1
+
 Добейтесь аналогичного результата, используя docker cp.  
-Предоставьте скриншоты  действий .
+Предоставьте скриншоты  действий.
 
 ## Задача 6.2
+
 Предложите способ извлечь файл из контейнера, используя только команду docker build и любой Dockerfile.  
-Предоставьте скриншоты  действий .
+Предоставьте скриншоты  действий.
 
 ## Задача 7
+
 Запустите ваше python-приложение с помощью runC, не используя docker или containerd.  
-Предоставьте скриншоты  действий .
+Предоставьте скриншоты  действий.
