@@ -157,10 +157,9 @@ Fork: `https://github.com/spasmaaan/shvirtd-example-python`
 
 ## Задача 6.2
 
-Предложите способ извлечь файл из контейнера, используя только команду docker build и любой Dockerfile.  
-Предоставьте скриншоты  действий.
+Предложите способ извлечь файл из контейнера, используя только команду docker build и любой Dockerfile.
 
-*Пока не готово, попробую успеть сделать.*
+![062_docker_build_copy](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Virtualization%20and%20containerization/04/062_docker_build_copy.png?raw=true)
 
 ## Задача 7
 
