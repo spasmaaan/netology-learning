@@ -24,7 +24,9 @@ See 'snap info docker' for additional versions.
 
 ## Задача 1
 
-1. Сделайте в своем github пространстве fork репозитория ```https://github.com/netology-code/shvirtd-example-python/blob/main/README.md```.   
+1. Сделайте в своем github пространстве fork репозитория ```https://github.com/netology-code/shvirtd-example-python/blob/main/README.md```.
+
+Fork: `https://github.com/spasmaaan/shvirtd-example-python`
 
 2. Создайте файл с именем ```Dockerfile.python``` для сборки данного проекта(для 3 задания изучите https://docs.docker.com/compose/compose-file/build/ ). Используйте базовый образ ```python:3.9-slim```. Протестируйте корректность сборки. Не забудьте dockerignore.
 
@@ -102,6 +104,9 @@ See 'snap info docker' for additional versions.
 ![04_2_docker](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Virtualization%20and%20containerization/04/04_2_docker.png?raw=true)
 
 3. Напишите bash-скрипт, который скачает ваш fork-репозиторий в каталог /opt и запустит проект целиком.
+
+Скрипт лежит тут:
+`https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Virtualization%20and%20containerization/04/shvirtd-example-python-installer.sh`
 
 ![04_3_script](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Virtualization%20and%20containerization/04/04_3_script.png?raw=true)
 
