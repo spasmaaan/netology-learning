@@ -95,15 +95,30 @@ See 'snap info docker' for additional versions.
 
 1. Запустите в Yandex Cloud ВМ (вам хватит 2 Гб Ram).
 
+![04_1_vm](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Virtualization%20and%20containerization/04/04_1_vm.png?raw=true)
+
 2. Подключитесь к Вм по ssh и установите docker.
+
+![04_2_docker](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Virtualization%20and%20containerization/04/04_2_docker.png?raw=true)
 
 3. Напишите bash-скрипт, который скачает ваш fork-репозиторий в каталог /opt и запустит проект целиком.
 
+![04_3_script](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Virtualization%20and%20containerization/04/04_3_script.png?raw=true)
+
 4. Зайдите на сайт проверки http подключений, например(или аналогичный): ```https://check-host.net/check-http``` и запустите проверку вашего сервиса ```http://<внешний_IP-адрес_вашей_ВМ>:8090```. Таким образом трафик будет направлен в ingress-proxy.
+
+![04_4_http_1](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Virtualization%20and%20containerization/04/04_4_http_1.png?raw=true)
+![04_4_http_2](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Virtualization%20and%20containerization/04/04_4_http_2.png?raw=true)
+![04_4_http_3](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Virtualization%20and%20containerization/04/04_4_http_3.png?raw=true)
 
 5. (Необязательная часть) Дополнительно настройте remote ssh context к вашему серверу. Отобразите список контекстов и результат удаленного выполнения ```docker ps -a```
 
+![04_5_context](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Virtualization%20and%20containerization/04/04_5_context.png?raw=true)
+
 6. В качестве ответа повторите  sql-запрос и приложите скриншот с данного сервера, bash-скрипт и ссылку на fork-репозиторий.
+
+![04_6_db](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Virtualization%20and%20containerization/04/04_6_db.png?raw=true)
+![04_6_git](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Virtualization%20and%20containerization/04/04_6_git.png?raw=true)
 
 
 ## Задача 5
