@@ -145,7 +145,9 @@ See 'snap info docker' for additional versions.
 ## Задача 6.1
 
 Добейтесь аналогичного результата, используя docker cp.  
-Предоставьте скриншоты  действий.
+
+![061_docker_cp](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Virtualization%20and%20containerization/04/061_docker_cp.png?raw=true)
+
 
 ## Задача 6.2
 
