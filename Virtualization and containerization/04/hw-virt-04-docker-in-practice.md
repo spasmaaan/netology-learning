@@ -26,7 +26,7 @@ See 'snap info docker' for additional versions.
 
 1. Сделайте в своем github пространстве fork репозитория ```https://github.com/netology-code/shvirtd-example-python/blob/main/README.md```.
 
-Fork: `https://github.com/spasmaaan/shvirtd-example-python`
+Fork: [https://github.com/spasmaaan/shvirtd-example-python](https://github.com/spasmaaan/shvirtd-example-python)
 
 2. Создайте файл с именем ```Dockerfile.python``` для сборки данного проекта(для 3 задания изучите https://docs.docker.com/compose/compose-file/build/ ). Используйте базовый образ ```python:3.9-slim```. Протестируйте корректность сборки. Не забудьте dockerignore.
 
@@ -130,13 +130,22 @@ Fork: `https://github.com/spasmaaan/shvirtd-example-python`
 
 1. Напишите и задеплойте на вашу облачную ВМ bash скрипт, который произведет резервное копирование БД mysql в директорию "/opt/backup" с помощью запуска в сети "backend" контейнера из образа ```schnitzler/mysqldump``` при помощи ```docker run ...``` команды. Подсказка: "документация образа."
 
+Скрипт:
+* [https://github.com/spasmaaan/shvirtd-example-python/blob/main/start_backup_db.sh](https://github.com/spasmaaan/shvirtd-example-python/blob/main/start_backup_db.sh)
+
 2. Протестируйте ручной запуск
+
+![05_2_script](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Virtualization%20and%20containerization/04/05_2_script.png?raw=true)
 
 3. Настройте выполнение скрипта раз в 1 минуту через cron, crontab или systemctl timer. Придумайте способ не светить логин/пароль в git!!
 
+![05_3_crontab_1](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Virtualization%20and%20containerization/04/05_3_crontab_1.png?raw=true)
+![05_3_crontab_2](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Virtualization%20and%20containerization/04/05_3_crontab_2.png?raw=true)
+
 4. Предоставьте скрипт, cron-task и скриншот с несколькими резервными копиями в "/opt/backup"
 
-*Пока не готово, попробую успеть сделать.*
+![05_4_backups](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Virtualization%20and%20containerization/04/05_4_backups.png?raw=true)
+
 
 ## Задача 6
 
