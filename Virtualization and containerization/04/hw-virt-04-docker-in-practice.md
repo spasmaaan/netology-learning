@@ -175,4 +175,4 @@ Fork: [https://github.com/spasmaaan/shvirtd-example-python](https://github.com/s
 Запустите ваше python-приложение с помощью runC, не используя docker или containerd.  
 Предоставьте скриншоты  действий.
 
-*Пока не готово, попробую успеть сделать.*
+![07_runc](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Virtualization%20and%20containerization/04/07_runc.png?raw=true)
