@@ -2,10 +2,16 @@
 
 1. Попробуйте запустить playbook на окружении из `test.yml`, зафиксируйте значение, которое имеет факт `some_fact` для указанного хоста при выполнении playbook.
 
+`some_fact = 12`
+
+![01_some_fact](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ansible/01/01_some_fact.png?raw=true)
 
 
 2. Найдите файл с переменными (group_vars), в котором задаётся найденное в первом пункте значение, и поменяйте его на `all default fact`.
 
+Файл: `src/playbook/group_vars_all/examp.yml`
+
+![02_new_some_fact](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ansible/01/02_new_some_fact.png?raw=true)
 
 
 3. Воспользуйтесь подготовленным (используется `docker`) или создайте собственное окружение для проведения дальнейших испытаний.
