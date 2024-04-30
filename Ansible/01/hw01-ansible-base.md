@@ -68,21 +68,31 @@ alias python='python3'
 
 11. Запустите playbook на окружении `prod.yml`. При запуске `ansible` должен запросить у вас пароль. Убедитесь, что факты `some_fact` для каждого из хостов определены из верных `group_vars`.
 
+![11_vars](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ansible/01/11_vars.png?raw=true)
 
 
 12. Заполните `README.md` ответами на вопросы. Сделайте `git push` в ветку `master`. В ответе отправьте ссылку на ваш открытый репозиторий с изменённым `playbook` и заполненным `README.md`.
 
+**+**
 
 
 13. Предоставьте скриншоты результатов запуска команд.
 
-
+**+**
 
 
 ## Необязательная часть
 
 1. При помощи `ansible-vault` расшифруйте все зашифрованные файлы с переменными.
 
+Изначально зашифрованных целиком файлов нет.
+В качестве примера будет зашифрован файл `src/playbook/grup_vars/all/examp.yml`.
+
+![a01_encrypt](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ansible/01/a01_encrypt.png?raw=true)
+
+Расшифровка файла.
+
+![a01_decrypt](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ansible/01/a01_decrypt.png?raw=true)
 
 
 2. Зашифруйте отдельное значение `PaSSw0rd` для переменной `some_fact` паролем `netology`. Добавьте полученное значение в `group_vars/all/exmp.yml`.
