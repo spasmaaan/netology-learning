@@ -16,10 +16,24 @@
 
 3. Воспользуйтесь подготовленным (используется `docker`) или создайте собственное окружение для проведения дальнейших испытаний.
 
+На образе **ubuntu:latest** отсутствует **python**, поэтому его пришлось установить:
+```bash
+docker exec -it ubuntu /bin/bash
+apt update
+apt install python3
+alias python='python3'
+```
 
+![03_docker](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ansible/01/03_docker.png?raw=true)
 
 4. Проведите запуск playbook на окружении из `prod.yml`. Зафиксируйте полученные значения `some_fact` для каждого из `managed host`.
 
+* centos7
+    `some_fact = CentOS`
+* ubuntu
+    `some_fact = Ubuntu`
+
+![04_prod](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ansible/01/04_prod.png?raw=true)
 
 
 5. Добавьте факты в `group_vars` каждой из групп хостов так, чтобы для `some_fact` получились значения: для `deb` — `deb default fact`, для `el` — `el default fact`.
