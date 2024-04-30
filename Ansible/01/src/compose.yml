@@ -1,0 +1,17 @@
+version: "3"
+
+x-host: &host
+  restart: on-failure
+  command: tail -f /dev/null
+
+services:
+  centos7:
+    image: centos:centos7
+    container_name: centos7
+    hostname: centos7
+    <<: [*host]
+  ubuntu:
+    image: ubuntu:latest
+    container_name: ubuntu
+    hostname: ubuntu
+    <<: [*host]
