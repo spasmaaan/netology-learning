@@ -97,10 +97,12 @@ alias python='python3'
 
 2. Зашифруйте отдельное значение `PaSSw0rd` для переменной `some_fact` паролем `netology`. Добавьте полученное значение в `group_vars/all/exmp.yml`.
 
+![a02_var](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ansible/01/a02_var.png?raw=true)
 
 
 3. Запустите `playbook`, убедитесь, что для нужных хостов применился новый `fact`.
 
+![a03_value](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ansible/01/a03_value.png?raw=true)
 
 
 4. Добавьте новую группу хостов `fedora`, самостоятельно придумайте для неё переменную. В качестве образа можно использовать [этот вариант](https://hub.docker.com/r/pycontribs/fedora).

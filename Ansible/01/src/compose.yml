@@ -8,10 +8,12 @@ services:
   centos7:
     image: centos:centos7
     container_name: centos7
-    hostname: centos7
     <<: [*host]
   ubuntu:
     image: ubuntu:latest
     container_name: ubuntu
-    hostname: ubuntu
+    <<: [*host]
+  fedora:
+    image: pycontribs/fedora:latest
+    container_name: fedora
     <<: [*host]
