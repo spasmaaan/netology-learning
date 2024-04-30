@@ -38,14 +38,16 @@ alias python='python3'
 
 5. Добавьте факты в `group_vars` каждой из групп хостов так, чтобы для `some_fact` получились значения: для `deb` — `deb default fact`, для `el` — `el default fact`.
 
-
+**+**
 
 6.  Повторите запуск playbook на окружении `prod.yml`. Убедитесь, что выдаются корректные значения для всех хостов.
 
+![05_prod_change_vars](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ansible/01/05_prod_change_vars.png?raw=true)
 
 
 7. При помощи `ansible-vault` зашифруйте факты в `group_vars/deb` и `group_vars/el` с паролем `netology`.
 
+![07_vault](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ansible/01/07_vault.png?raw=true)
 
 
 8. Запустите playbook на окружении `prod.yml`. При запуске `ansible` должен запросить у вас пароль. Убедитесь в работоспособности.
