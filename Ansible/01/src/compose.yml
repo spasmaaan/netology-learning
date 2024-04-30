@@ -10,7 +10,9 @@ services:
     container_name: centos7
     <<: [*host]
   ubuntu:
-    image: ubuntu:latest
+    build: 
+      context: .
+      dockerfile: Dockerfile.ubuntu
     container_name: ubuntu
     <<: [*host]
   fedora:
