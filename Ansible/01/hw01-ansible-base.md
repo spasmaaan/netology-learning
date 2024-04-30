@@ -112,7 +112,18 @@ alias python='python3'
 
 5. Напишите скрипт на bash: автоматизируйте поднятие необходимых контейнеров, запуск ansible-playbook и остановку контейнеров.
 
+Чтобы в `ubuntu` всегда устанавливался `python3` при пересоздании контейнера, был добавлен `Dockerfile.unbuntu`.
+
+Bash скрипт `manage.sh`:
+* Запустить конейнеры и выполнить playbook:
+    `./manage.sh up`
+    ![a05_up](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ansible/01/a05_up.png?raw=true)
+
+* Остановить контейнеры:
+    `./manage.sh down`
+    ![a05_down](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ansible/01/a05_down.png?raw=true)
+
 
 6. Все изменения должны быть зафиксированы и отправлены в ваш личный репозиторий.
-
+    **+**
 
