@@ -52,14 +52,18 @@ alias python='python3'
 
 8. Запустите playbook на окружении `prod.yml`. При запуске `ansible` должен запросить у вас пароль. Убедитесь в работоспособности.
 
+![08_decrypt](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ansible/01/08_decrypt.png?raw=true)
 
 
 9. Посмотрите при помощи `ansible-doc` список плагинов для подключения. Выберите подходящий для работы на `control node`.
 
+Будет использоваться плагин для подключения `local`.
 
+![09_plugins](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ansible/01/09_plugins.png?raw=true)
 
 10. В `prod.yml` добавьте новую группу хостов с именем  `local`, в ней разместите localhost с необходимым типом подключения.
 
+![10_localhost](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ansible/01/10_localhost.png?raw=true)
 
 
 11. Запустите playbook на окружении `prod.yml`. При запуске `ansible` должен запросить у вас пароль. Убедитесь, что факты `some_fact` для каждого из хостов определены из верных `group_vars`.
