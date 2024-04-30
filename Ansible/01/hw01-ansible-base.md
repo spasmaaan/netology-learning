@@ -107,6 +107,7 @@ alias python='python3'
 
 4. Добавьте новую группу хостов `fedora`, самостоятельно придумайте для неё переменную. В качестве образа можно использовать [этот вариант](https://hub.docker.com/r/pycontribs/fedora).
 
+![a04_fedora](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ansible/01/a04_fedora.png?raw=true)
 
 
 5. Напишите скрипт на bash: автоматизируйте поднятие необходимых контейнеров, запуск ansible-playbook и остановку контейнеров.

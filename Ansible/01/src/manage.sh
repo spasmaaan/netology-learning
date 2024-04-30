@@ -2,41 +2,43 @@
 
 case $1 in
     up)
-        echo -n "Enter password: "
+        echo "Enter password: "
         read ansible_vault_password
 
-        echo -n "=================="
-        echo -n "  Starting hosts  "
-        echo -n "__________________"
+        echo "=================="
+        echo "  Starting hosts  "
+        echo "------------------"
 
         docker compose up -d
         
-        echo -n "=================="
-        echo -n "  Hosts started   "
-        echo -n "__________________"
+        echo "=================="
+        echo "  Hosts started   "
+        echo "------------------"
 
         echo ${ansible_vault_password} | ansible-playbook site.yml -i inventory/prod.yml --vault-password-file=/bin/cat
         
         
-        echo -n "=================="
-        echo -n "  Hosts prepared  "
-        echo -n "__________________"
+        echo "=================="
+        echo "  Hosts prepared  "
+        echo "------------------"
     ;;
 
     down)
-        echo -n "=================="
-        echo -n "  Stopping hosts  "
-        echo -n "__________________"
+        echo "=================="
+        echo "  Stopping hosts  "
+        echo "------------------"
 
         docker compose down
         
-        echo -n "=================="
-        echo -n "  Hosts stopped   "
-        echo -n "__________________"
+        echo "=================="
+        echo "  Hosts stopped   "
+        echo "------------------"
     ;;
 
     *)
-        echo -n ""
+        echo "=================="
+        echo "     Skipped      "
+        echo "------------------"
     ;;
 esac
 
