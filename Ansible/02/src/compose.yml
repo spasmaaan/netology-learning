@@ -7,9 +7,9 @@ x-host: &host
 services:
   clickhouse-01:
     image: centos:centos7
-    container_name: centos7
+    container_name: clickhouse-01
     <<: [*host]
   vector-01:
     image: centos:centos7
-    container_name: centos7
+    container_name: vector-01
     <<: [*host]
