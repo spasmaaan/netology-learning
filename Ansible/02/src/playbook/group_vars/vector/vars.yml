@@ -1,0 +1,24 @@
+---
+vector_version: "0.38.0-1"
+vector_config:
+  sources:
+    system_logs:
+      type: file
+      read_from: beginning
+      ignore_older_secs: 600
+      include:
+        - /var/log/**/*.log
+  transforms:
+  sinks:
+    to_clickhouse:
+      type: clickhouse
+      inputs:
+        - system_logs
+      endpoint: http://localhost:8123
+      auth:
+        user:
+        password:
+      database: logs
+      table:
+      skip_unknown_fields: true
+      compression: gzip

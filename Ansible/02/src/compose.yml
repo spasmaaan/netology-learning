@@ -1,0 +1,15 @@
+version: "3"
+
+x-host: &host
+  restart: on-failure
+  command: tail -f /dev/null
+
+services:
+  clickhouse-01:
+    image: centos:centos7
+    container_name: centos7
+    <<: [*host]
+  vector-01:
+    image: centos:centos7
+    container_name: centos7
+    <<: [*host]
