@@ -1,6 +1,6 @@
 ---
 # Версия поднята, т.к. для прежней версии часть пакетов не существовало.
-clickhouse_version: "22.3.3.44"
+clickhouse_version: "22.3.8.39"
 clickhouse_packages:
   - clickhouse-client
   - clickhouse-server

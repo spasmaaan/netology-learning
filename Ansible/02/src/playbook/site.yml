@@ -26,8 +26,6 @@
           - clickhouse-common-static-{{ clickhouse_version }}.rpm
           - clickhouse-client-{{ clickhouse_version }}.rpm
           - clickhouse-server-{{ clickhouse_version }}.rpm
-  #  - name: Enable Clickhouse server service
-  #    ansible.builtin.command: systemctl enable clickhouse-server
       notify: Start clickhouse service
     - name: Flush handlers
       meta: flush_handlers
@@ -57,6 +55,4 @@
       ansible.builtin.template:
         src: templates/vector.yml.j2
         dest: /etc/vector/vector.yaml
- #   - name: Enable Vector service
- #     ansible.builtin.command: systemctl enable vector
       notify: Start Vector service
