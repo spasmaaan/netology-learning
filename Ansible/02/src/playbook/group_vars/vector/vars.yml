@@ -1,5 +1,5 @@
 ---
-vector_version: "0.38.0-1"
+vector_version: "0.38.0"
 vector_config:
   sources:
     system_logs:
