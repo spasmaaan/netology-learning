@@ -7,7 +7,7 @@
       ansible.builtin.service:
         name: clickhouse-server
         state: restarted
-        enable: true
+        enabled: true
   tasks:
     - block:
         - name: Get clickhouse distrib
@@ -43,16 +43,21 @@
       ansible.builtin.service:
         name: vector
         state: restarted
-        enable: true
+        enabled: true
   tasks:
     - name: Get Vector distrib
       ansible.builtin.get_url:
         url: "https://packages.timber.io/vector/{{ vector_version }}/vector-{{ vector_version }}-x86_64-unknown-linux-musl.tar.gz"
         dest: "./vector-{{ vector_version }}.tar.gz"
+    - name: Create directory for Vector distrib
+      file:
+        path: ./vector-{{ vector_version }}
+        state: directory
     - name: Unarchive Vector distrib
       ansible.builtin.unarchive:
         src: ./vector-{{ vector_version }}.tar.gz
         dest: ./vector-{{ vector_version }}
+        remote_src: true
         extra_opts:
         - --strip-components=2
     - name: Copy Vector bin file
@@ -69,6 +74,7 @@
       ansible.builtin.copy:
         src: ./vector-{{ vector_version }}/etc/systemd/vector.default
         dest: /etc/default/vector
+        remote_src: true
         owner: root
         group: root
         mode: "0755"
@@ -77,9 +83,15 @@
       ansible.builtin.copy:
         src: ./vector-{{ vector_version }}/etc/systemd/vector.service
         dest: /usr/lib/systemd/system/vector.service
+        remote_src: true
         owner: root
         group: root
         mode: "0755"
+    - name: Create directory for Vector config
+      become: true
+      file:
+        path: /etc/vector/
+        state: directory
     - name: Setup Vector config
       become: true
       ansible.builtin.template:
