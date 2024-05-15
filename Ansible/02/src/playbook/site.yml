@@ -78,15 +78,11 @@
         owner: root
         group: root
         mode: "0755"
-    - name: Copy Vector systemd files
+    - name: Setup Vector service systemd file
       become: true
-      ansible.builtin.copy:
-        src: ./vector-{{ vector_version }}/etc/systemd/vector.service
+      ansible.builtin.template:
+        src: templates/vector.service.j2
         dest: /usr/lib/systemd/system/vector.service
-        remote_src: true
-        owner: root
-        group: root
-        mode: "0755"
     - name: Create directory for Vector config
       become: true
       file:
