@@ -60,6 +60,7 @@
       ansible.builtin.copy:
         src: ./vector-{{ vector_version }}/bin/vector
         dest: /usr/bin/vector
+        remote_src: true
         owner: root
         group: root
         mode: "0755"
