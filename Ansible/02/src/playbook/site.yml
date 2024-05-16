@@ -1,6 +1,8 @@
 ---
 - name: Install Clickhouse
   hosts: clickhouse
+  tags: 
+    - clickhouse
   handlers:
     - name: Start clickhouse service
       become: true
@@ -20,6 +22,8 @@
           ansible.builtin.get_url:
             url: "https://packages.clickhouse.com/rpm/stable/clickhouse-common-static-{{ clickhouse_version }}.x86_64.rpm"
             dest: "./clickhouse-common-static-{{ clickhouse_version }}.rpm"
+      tags:
+        - get
     - name: Install clickhouse packages
       become: true
       ansible.builtin.yum:
@@ -28,6 +32,8 @@
           - clickhouse-client-{{ clickhouse_version }}.rpm
           - clickhouse-server-{{ clickhouse_version }}.rpm
       notify: Start clickhouse service
+      tags:
+        - install
     - name: Flush handlers
       meta: flush_handlers
     - name: Create database
@@ -35,8 +41,13 @@
       register: create_db
       failed_when: create_db.rc != 0 and create_db.rc !=82
       changed_when: create_db.rc == 0
+      tags:
+        - prepare
+      
 - name: Install Vector
   hosts: vector
+  tags: 
+    - vector
   handlers: 
     - name: Start Vector service
       become: true
@@ -49,10 +60,14 @@
       ansible.builtin.get_url:
         url: "https://packages.timber.io/vector/{{ vector_version }}/vector-{{ vector_version }}-x86_64-unknown-linux-musl.tar.gz"
         dest: "./vector-{{ vector_version }}.tar.gz"
+      tags:
+        - get
     - name: Create directory for Vector distrib
       file:
         path: ./vector-{{ vector_version }}
         state: directory
+      tags:
+        - install
     - name: Unarchive Vector distrib
       ansible.builtin.unarchive:
         src: ./vector-{{ vector_version }}.tar.gz
@@ -60,6 +75,8 @@
         remote_src: true
         extra_opts:
         - --strip-components=2
+      tags:
+        - install
     - name: Copy Vector bin file
       become: true
       ansible.builtin.copy:
@@ -69,6 +86,8 @@
         owner: root
         group: root
         mode: "0755"
+      tags:
+        - install
     - name: Copy Vector default
       become: true
       ansible.builtin.copy:
@@ -78,26 +97,36 @@
         owner: root
         group: root
         mode: "0755"
+      tags:
+        - install
     - name: Setup Vector service systemd file
       become: true
       ansible.builtin.template:
         src: templates/vector.service.j2
         dest: /usr/lib/systemd/system/vector.service
+      tags:
+        - install
     - name: Create directory for Vector config
       become: true
       file:
         path: /etc/vector/
         state: directory
+      tags:
+        - install
     - name: Setup Vector config
       become: true
       ansible.builtin.template:
         src: templates/vector.yml.j2
         dest: /etc/vector/vector.yaml
+      tags:
+        - install
     - name: Create Vector group
       become: true
       ansible.builtin.group:
         name: vector
         state: present
+      tags:
+        - install
     - name: Create Vector user
       become: true
       ansible.builtin.user:
@@ -105,8 +134,12 @@
         shell: /bin/sh
         groups: vector
         append: yes
+      tags:
+        - install
     - name: Reload systemd configs
       become: true
       ansible.builtin.systemd_service:
         daemon_reload: true
       notify: Start Vector service
+      tags:
+        - prepare
