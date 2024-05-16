@@ -5,5 +5,3 @@ clickhouse_packages:
   - clickhouse-client
   - clickhouse-server
   - clickhouse-common-static
-clickhouse_user: testuser
-clickhouse_password: pass123$
