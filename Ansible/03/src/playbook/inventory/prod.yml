@@ -3,14 +3,14 @@ clickhouse:
   hosts:
     clickhouse-01:
       ansible_connection: ssh
-      host: 10.130.0.31
+      host: 10.130.0.34
 vector:
   hosts:
     vector-01:
       ansible_connection: ssh
-      host: 10.130.0.27
+      host: 10.130.0.35
 lighthouse:
   hosts:
     lighthouse-01:
       ansible_connection: ssh
-      host: 10.130.0.27
+      host: 10.130.0.15
