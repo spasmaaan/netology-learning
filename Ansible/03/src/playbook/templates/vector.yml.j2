@@ -1,0 +1,8 @@
+data_dir: "/var/lib/vector"
+api:
+  enabled: false
+  address = "127.0.0.1:8686"
+
+sources: {{ vector_config['sources'] }}
+transforms: {{ vector_config['transforms'] }}
+sinks: {{ vector_config['sinks'] }}

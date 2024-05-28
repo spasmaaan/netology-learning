@@ -1,0 +1,6 @@
+---
+vector_version: "0.38.0"
+vector_config:
+  sources:
+  transforms:
+  sinks:
