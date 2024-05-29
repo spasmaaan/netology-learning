@@ -177,6 +177,15 @@
         state: restarted
         enabled: true
   tasks:
+    - name: Install EPEL repo
+      become: yes
+      tags:
+        - lighthouse-batch
+        - nginx
+        - install
+      ansible.builtin.yum: 
+        name: epel-release
+        state: present
     - name: Install nginx
       become: true
       tags:
@@ -184,18 +193,8 @@
         - nginx
         - install
       ansible.builtin.yum:
-        name:
-          - nginx
-    - name: Setup nginx config for Lighthouse
-      become: true
-      tags:
-        - lighthouse-batch
-        - nginx
-        - install
-      ansible.builtin.template:
-        src: templates/lighthouse.nginx.j2
-        dest: /etc/nginx/test.conf
-        mode: "0644"
+        name: nginx
+        state: latest
       notify: Start Nginx service
 - name: Install Lighthouse
   hosts: lighthouse
@@ -203,18 +202,37 @@
     - lighthouse-batch
     - lighthouse
   handlers:
-    - name: Start Lighthouse service
+    - name: Reload nginx
       become: true
-      ansible.builtin.service:
-        name: lighthouse
-        state: restarted
-        enabled: true
-  tasks:
-    - name: Get Lighthouse distrib
-      ansible.builtin.file:
-        path: ./vector-{{ vector_version }}
-        state: directory
-        mode: "0755"
+      ansible.builtin.command: nginx -s reload
+  pre_tasks:
+    - name: Install Git
+      become: true
       tags:
+        - lighthouse-batch
+        - dependencies
         - install
-        - vector
+      ansible.builtin.yum:
+        name: git
+        state: latest
+  tasks:
+    - name: Get Lighthouse from Git
+      tags:
+        - lighthouse-batch
+        - lighthouse
+        - get
+      ansible.builtin.git:
+        repo: "{{ lighthouse_repo }}"
+        version: "{{ lighthouse_branch }}"
+        dest: "{{ lighthouse_path }}"
+    - name: Setup nginx config for Lighthouse
+      become: true
+      tags:
+        - lighthouse-batch
+        - lighthouse
+        - install
+      ansible.builtin.template:
+        src: templates/lighthouse.nginx.j2
+        dest: /etc/nginx/conf.d/lighthouse.conf
+        mode: "0644"
+      notify: Reload nginx
