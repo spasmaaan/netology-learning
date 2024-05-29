@@ -178,12 +178,12 @@
         enabled: true
   tasks:
     - name: Install EPEL repo
-      become: yes
+      become: true
       tags:
         - lighthouse-batch
         - nginx
         - install
-      ansible.builtin.yum: 
+      ansible.builtin.yum:
         name: epel-release
         state: present
     - name: Install nginx
@@ -194,7 +194,7 @@
         - install
       ansible.builtin.yum:
         name: nginx
-        state: latest
+        state: present
       notify: Start Nginx service
 - name: Install Lighthouse
   hosts: lighthouse
@@ -205,6 +205,8 @@
     - name: Reload nginx
       become: true
       ansible.builtin.command: nginx -s reload
+      register: result
+      changed_when: result.rc != 0
   pre_tasks:
     - name: Install Git
       become: true
@@ -214,7 +216,7 @@
         - install
       ansible.builtin.yum:
         name: git
-        state: latest
+        state: present
   tasks:
     - name: Get Lighthouse from Git
       become: true
