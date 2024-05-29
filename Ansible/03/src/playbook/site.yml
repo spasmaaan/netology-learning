@@ -217,6 +217,7 @@
         state: latest
   tasks:
     - name: Get Lighthouse from Git
+      become: true
       tags:
         - lighthouse-batch
         - lighthouse

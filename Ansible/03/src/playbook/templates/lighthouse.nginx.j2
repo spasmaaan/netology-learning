@@ -1,6 +1,6 @@
 server {
     listen {{ lighthouse_http_port }};
-    server_name  {{ lighthouse.hosts.lighthouse-01.host }};
+    server_name  {{ hostvars["lighthouse-01"]["host"] }};
 
     location / {
         root {{ lighthouse_path }};
