@@ -1,0 +1,5 @@
+---
+lighthouse_repo: "https://github.com/VKCOM/lighthouse.git"
+lighthouse_branch: "master"
+lighthouse_path: "/var/www/lighthouse/"
+lighthouse_http_port: 80

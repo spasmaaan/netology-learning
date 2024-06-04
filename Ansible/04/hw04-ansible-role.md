@@ -2,14 +2,18 @@
 
 1. * Необязательно. Познакомьтесь с [LightHouse](https://youtu.be/ymlrNlaHzIY?t=929).
 
-
+**+**
 
 2. Создайте два пустых публичных репозитория в любом своём проекте: vector-role и lighthouse-role.
 
+* [Vector](https://github.com/spasmaaan/ansible-role-vector-test)
+* [Lighthouse](https://github.com/spasmaaan/ansible-role-lighthouse-test)
+  
 
 
 3. Добавьте публичную часть своего ключа к своему профилю на GitHub.
 
+**+**
 
 
 
@@ -33,6 +37,7 @@
        name: clickhouse 
    ```
 
+**+**
 
 
 2. При помощи `ansible-galaxy` скачайте себе эту роль.
