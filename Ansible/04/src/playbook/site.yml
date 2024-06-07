@@ -11,9 +11,12 @@
     - vector
   roles:
     - role: vector-role
-      vars: 
-        vector_version: {{ vector_version }}
-        vector_config: {{ vector_config }}
+      vars:
+        vector_version: "{{ vector_version }}"
+        vector_config: 
+          sources:
+          transforms:
+          sinks:
 - name: Install nginx for Lighthouse
   hosts: lighthouse
   tags:
@@ -64,5 +67,5 @@
   roles:
     - role: lighthouse-role
       vars: 
-        server_name: {{ lighthouse_server_name }}
-        nginx_config_path: {{ lighthouse_nginx_config_path }}
+        server_name: "{{ lighthouse_server_name }}"
+        nginx_config_path: "{{ lighthouse_nginx_config_path }}"
