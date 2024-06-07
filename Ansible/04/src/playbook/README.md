@@ -18,19 +18,20 @@ ansible-playbook -i inventory/prod.yml site.yml
 
 Устанавливает Vector на заданный хост и запускает его демона.
 
+## Install nginx for Lighthouse
+
+Устанавливает nginx для Lighthouse.
 
 ## Install Lighthouse
 
-Устанавливает nginx и Lighthouse на заданный хост и запускает nginx с Lighthouse.
+Устанавливает Lighthouse в nginx.
 
 
 # Tags
 
 * **clickhouse** - Только для Clickhouse.
 * **vector** - Только для Vector.
-* **get** - Загрузка файлов для устновки.
 * **install** - Установка демонов.
-* **prepare** - Подготовка демонов к работе и их запуск.
 * **lighthouse-batch** - Установка Lighthouse.
 * **lighthouse** - Установка приложения Lighthouse в nginx.
 * **nginx** - Установка сервера nginx.
@@ -43,8 +44,6 @@ ansible-playbook -i inventory/prod.yml site.yml
 Файл: `group_vars/clickhouse/vars.yml`
 
 * **clickhouse_version** - версия Clickhouse. 
-* **clickhouse_packages** - пакеты для установк Clickhouse.
-  Если не задано, то будет загружен *clickhouse-common-static*.
 
 ## Vector
 
@@ -57,7 +56,5 @@ ansible-playbook -i inventory/prod.yml site.yml
 
 Файл: `group_vars/lighthouse/vars.yml`
 
-* **lighthouse_repo** - git рупозиторий с Lighthouse.
-* **lighthouse_branch** - ветка git-репозитория.
-* **lighthouse_path** - путь к папке, в которую будет установлен Lighthouse. 
-* **lighthouse_http_port** - http-порт, на котором будет вещать nginx.
+* **lighthouse_server_name** - имя сервера с Lighthouse.
+* **lighthouse_nginx_config_path** - путь к файлу конфига Lighthouse в nginx.

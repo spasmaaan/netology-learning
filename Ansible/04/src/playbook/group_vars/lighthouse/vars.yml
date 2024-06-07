@@ -1,5 +1,3 @@
 ---
-lighthouse_repo: "https://github.com/VKCOM/lighthouse.git"
-lighthouse_branch: "master"
-lighthouse_path: "/var/www/lighthouse/"
-lighthouse_http_port: 80
+lighthouse_server_name: {{ hostvars["lighthouse-01"]["host"] }}
+lighthouse_nginx_config_path: /etc/nginx/conf.d/lighthouse.conf
