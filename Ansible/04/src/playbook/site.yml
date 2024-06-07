@@ -4,7 +4,9 @@
   tags:
     - clickhouse
   roles:
-    - clickhouse
+    - role: clickhouse
+      vars:
+        clickhouse_version: "22.3.8.39"
 - name: Install Vector
   hosts: vector
   tags:
@@ -12,7 +14,7 @@
   roles:
     - role: vector-role
       vars:
-        vector_version: "{{ vector_version }}"
+        vector_version: "0.38.0"
         vector_config: 
           sources:
           transforms:
@@ -67,5 +69,5 @@
   roles:
     - role: lighthouse-role
       vars: 
-        server_name: "{{ lighthouse_server_name }}"
-        nginx_config_path: "{{ lighthouse_nginx_config_path }}"
+        server_name: "lighthouse-01"
+        nginx_config_path: /etc/nginx/conf.d/lighthouse.conf
