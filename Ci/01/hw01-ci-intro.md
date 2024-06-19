@@ -46,7 +46,7 @@
 
 4. Верните задачи в статус Open.
 
-![4_tesks_to_open](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ci/01/4_tesks_to_open.png?raw=true)
+![4_tasks_to_open](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ci/01/4_tasks_to_open.png?raw=true)
 
 5. Перейдите в Scrum, запланируйте новый спринт, состоящий из задач эпика и одного бага, стартуйте спринт, проведите задачи до состояния Closed. Закройте спринт.
 
@@ -54,6 +54,7 @@
 
 ![5_2_close](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ci/01/5_2_close.png?raw=true)
 
+![5_3_close_sprint](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ci/01/5_3_close_sprint.png?raw=true)
 
 6. Если всё отработалось в рамках ожидания — выгрузите схемы workflow для импорта в XML. Файлы с workflow и скриншоты workflow приложите к решению задания.
 
