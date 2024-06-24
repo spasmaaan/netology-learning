@@ -40,14 +40,43 @@
 ### Основная часть
 
 1. Создайте новый проект, название произвольное.
+
+![1_1_project](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ci/02/1_1_project.png?raw=true)
+
 2. Скачайте пакет sonar-scanner, который вам предлагает скачать SonarQube.
+
+![1_2_wget_scanner](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ci/02/1_2_wget_scanner.png?raw=true)
+
 3. Сделайте так, чтобы binary был доступен через вызов в shell (или поменяйте переменную PATH, или любой другой, удобный вам способ).
+
+![1_3_link](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ci/02/1_3_link.png?raw=true)
+
 4. Проверьте `sonar-scanner --version`.
+
+![1_4_scanner_version](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ci/02/1_4_scanner_version.png?raw=true)
+
 5. Запустите анализатор против кода из директории [example](./example) с дополнительным ключом `-Dsonar.coverage.exclusions=fail.py`.
+
+![1_5_scan_1](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ci/02/1_5_scan_1.png?raw=true)
+![1_5_scan_2](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ci/02/1_5_scan_2.png?raw=true)
+
 6. Посмотрите результат в интерфейсе.
+
+![1_6_result](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ci/02/1_6_result.png?raw=true)
+
 7. Исправьте ошибки, которые он выявил, включая warnings.
+
+**+**
+
 8. Запустите анализатор повторно — проверьте, что QG пройдены успешно.
+
+![1_8_fix_1](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ci/02/1_8_fix_1.png?raw=true)
+![1_8_fix_2](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ci/02/1_8_fix_2.png?raw=true)
+
 9. Сделайте скриншот успешного прохождения анализа, приложите к решению ДЗ.
+
+![1_9_fixed](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ci/02/1_9_fixed.png?raw=true)
+
 
 ## Знакомство с Nexus
 
@@ -60,32 +89,61 @@
  *    version: 8_282;
  *    classifier: distrib;
  *    type: tar.gz.
+
+
    
 2. В него же загрузите такой же артефакт, но с version: 8_102.
+
+
+
 3. Проверьте, что все файлы загрузились успешно.
+
+
+
 4. В ответе пришлите файл `maven-metadata.xml` для этого артефекта.
+
+
+
 
 ### Знакомство с Maven
 
 ### Подготовка к выполнению
 
 1. Скачайте дистрибутив с [maven](https://maven.apache.org/download.cgi).
+
+
+
 2. Разархивируйте, сделайте так, чтобы binary был доступен через вызов в shell (или поменяйте переменную PATH, или любой другой, удобный вам способ).
+
+
+
 3. Удалите из `apache-maven-<version>/conf/settings.xml` упоминание о правиле, отвергающем HTTP- соединение — раздел mirrors —> id: my-repository-http-unblocker.
+
+
+
 4. Проверьте `mvn --version`.
+
+
+
 5. Заберите директорию [mvn](./mvn) с pom.
+
+
+
 
 ### Основная часть
 
 1. Поменяйте в `pom.xml` блок с зависимостями под ваш артефакт из первого пункта задания для Nexus (java с версией 8_282).
+
+
+
 2. Запустите команду `mvn package` в директории с `pom.xml`, ожидайте успешного окончания.
+
+
+
 3. Проверьте директорию `~/.m2/repository/`, найдите ваш артефакт.
+
+
+
 4. В ответе пришлите исправленный файл `pom.xml`.
 
----
 
-### Как оформить решение задания
-
-Выполненное домашнее задание пришлите в виде ссылки на .md-файл в вашем репозитории.
-
----
