@@ -90,19 +90,33 @@
  *    classifier: distrib;
  *    type: tar.gz.
 
-
+![2_1_load](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ci/02/2_1_load.png?raw=true)
    
 2. В него же загрузите такой же артефакт, но с version: 8_102.
 
-
+![2_2_prev](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ci/02/2_2_prev.png?raw=true)
 
 3. Проверьте, что все файлы загрузились успешно.
 
-
+**+**
 
 4. В ответе пришлите файл `maven-metadata.xml` для этого артефекта.
 
-
+```xml
+<metadata modelVersion="1.1.0">
+    <groupId>netology</groupId>
+    <artifactId>java</artifactId>
+    <versioning>
+        <latest>8_282</latest>
+        <release>8_282</release>
+        <versions>
+            <version>8_102</version>
+            <version>8_282</version>
+        </versions>
+        <lastUpdated>20240624202452</lastUpdated>
+    </versioning>
+</metadata>
+```
 
 
 ### Знакомство с Maven
@@ -111,39 +125,39 @@
 
 1. Скачайте дистрибутив с [maven](https://maven.apache.org/download.cgi).
 
-
+![3_0_1_download](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ci/02/3_0_1_download.png?raw=true)
 
 2. Разархивируйте, сделайте так, чтобы binary был доступен через вызов в shell (или поменяйте переменную PATH, или любой другой, удобный вам способ).
 
-
+![3_0_2_unpack](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ci/02/3_0_2_unpack.png?raw=true)
 
 3. Удалите из `apache-maven-<version>/conf/settings.xml` упоминание о правиле, отвергающем HTTP- соединение — раздел mirrors —> id: my-repository-http-unblocker.
 
-
+![3_0_3_config](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ci/02/3_0_3_config.png?raw=true)
 
 4. Проверьте `mvn --version`.
 
-
+![3_0_4_version](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ci/02/3_0_4_version.png?raw=true)
 
 5. Заберите директорию [mvn](./mvn) с pom.
 
-
+![3_0_5_mvn](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ci/02/3_0_5_mvn.png?raw=true)
 
 
 ### Основная часть
 
 1. Поменяйте в `pom.xml` блок с зависимостями под ваш артефакт из первого пункта задания для Nexus (java с версией 8_282).
 
-
+![3_1_pom](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ci/02/3_1_pom.png?raw=true)
 
 2. Запустите команду `mvn package` в директории с `pom.xml`, ожидайте успешного окончания.
 
-
+![3_2_package](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ci/02/3_2_package.png?raw=true)
 
 3. Проверьте директорию `~/.m2/repository/`, найдите ваш артефакт.
 
-
+![3_3_dir](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ci/02/3_3_dir.png?raw=true)
 
 4. В ответе пришлите исправленный файл `pom.xml`.
 
-
+[mvn/pom.xml](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ci/02/src/mvn/pom.xml?raw=true)
