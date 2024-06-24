@@ -66,6 +66,7 @@
 
 7. Исправьте ошибки, которые он выявил, включая warnings.
 
+[example/fail.py](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ci/02/src/example/fail.py)
 **+**
 
 8. Запустите анализатор повторно — проверьте, что QG пройдены успешно.
