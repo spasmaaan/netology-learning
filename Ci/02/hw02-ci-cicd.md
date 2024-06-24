@@ -160,4 +160,4 @@
 
 4. В ответе пришлите исправленный файл `pom.xml`.
 
-[mvn/pom.xml](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ci/02/src/mvn/pom.xml?raw=true)
+[mvn/pom.xml](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ci/02/src/mvn/pom.xml)
