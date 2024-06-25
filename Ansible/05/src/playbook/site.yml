@@ -1,0 +1,73 @@
+---
+- name: Install Clickhouse
+  hosts: clickhouse
+  tags:
+    - clickhouse
+  roles:
+    - role: clickhouse
+      vars:
+        clickhouse_version: "22.3.8.39"
+- name: Install Vector
+  hosts: vector
+  tags:
+    - vector
+  roles:
+    - role: vector-role
+      vars:
+        vector_version: "0.38.0"
+        vector_config: 
+          sources:
+          transforms:
+          sinks:
+- name: Install nginx for Lighthouse
+  hosts: lighthouse
+  tags:
+    - lighthouse-batch
+    - nginx
+  handlers:
+    - name: Start Nginx service
+      become: true
+      ansible.builtin.service:
+        name: nginx
+        state: restarted
+        enabled: true
+  tasks:
+    - name: Install EPEL repo
+      become: true
+      tags:
+        - lighthouse-batch
+        - nginx
+        - install
+      ansible.builtin.yum:
+        name: epel-release
+        state: present
+    - name: Install nginx
+      become: true
+      tags:
+        - lighthouse-batch
+        - nginx
+        - install
+      ansible.builtin.yum:
+        name: nginx
+        state: present
+      notify: Start Nginx service
+- name: Install Lighthouse
+  hosts: lighthouse
+  tags:
+    - lighthouse-batch
+    - lighthouse
+  pre_tasks:
+    - name: Install Git
+      become: true
+      tags:
+        - lighthouse-batch
+        - dependencies
+        - install
+      ansible.builtin.yum:
+        name: git
+        state: present
+  roles:
+    - role: lighthouse-role
+      vars: 
+        server_name: "lighthouse-01"
+        nginx_config_path: /etc/nginx/conf.d/lighthouse.conf
