@@ -91,10 +91,16 @@ molecule test -s compatibility --destroy always
 
 6. Запустите команду `tox`. Убедитесь, что всё отработало успешно.
 
-
+![2_4_check_1](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ansible/05/2_4_check_1.png?raw=true)
+![2_4_check_2](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ansible/05/2_4_check_2.png?raw=true)
+![2_4_check_3](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ansible/05/2_4_check_3.png?raw=true)
+![2_4_check_4](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ansible/05/2_4_check_4.png?raw=true)
+![2_4_check_5](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ansible/05/2_4_check_5.png?raw=true)
+![2_4_check_6](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ansible/05/2_4_check_6.png?raw=true)
 
 7. Добавьте новый тег на коммит с рабочим сценарием в соответствии с семантическим версионированием.
 
+[ansible-role-vector-test release 1.2](https://github.com/spasmaaan/ansible-role-vector-test/releases/tag/1.2)
 
 
 
@@ -102,16 +108,16 @@ molecule test -s compatibility --destroy always
 
 1. Проделайте схожие манипуляции для создания роли LightHouse.
 
-
+**-**
 
 2. Создайте сценарий внутри любой из своих ролей, который умеет поднимать весь стек при помощи всех ролей.
 
-
+**-**
 
 3. Убедитесь в работоспособности своего стека. Создайте отдельный verify.yml, который будет проверять работоспособность интеграции всех инструментов между ними.
 
-
+**-**
 
 4. Выложите свои roles в репозитории.
 
-
+**-**
