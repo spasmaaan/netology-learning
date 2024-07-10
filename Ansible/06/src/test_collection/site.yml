@@ -1,8 +1,9 @@
+---
 - name: Test module
   hosts: localhost
   tasks:
-  - name:
-    file_content_changer:
+  - name: Run test file_content
+    spasmaaan.yandex_cloud_elk.file_content_changer:
       vars:
         path: /home/leo-jek/test.txt
-        content: Test 1234
+        content: Test new 

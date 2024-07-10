@@ -227,12 +227,12 @@ if __name__ == '__main__':
 
 **Шаг 14.** Создайте ещё одну директорию любого наименования, перенесите туда single task playbook и архив c collection.
 
-
+[Ansible/06/src/test_collection](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ansible/06/src/test_collection)
 
 
 **Шаг 15.** Установите collection из локального архива: `ansible-galaxy collection install <archivename>.tar.gz`.
 
-
+![1_15_install_collection](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ansible/06/1_15_install_collection.png?raw=true)
 
 
 **Шаг 16.** Запустите playbook, убедитесь, что он работает.

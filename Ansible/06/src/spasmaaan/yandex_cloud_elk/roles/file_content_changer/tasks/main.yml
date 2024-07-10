@@ -1,5 +1,5 @@
 ---
-  - name:
-    file_content:
+  - name: Set file content
+    spasmaaan.yandex_cloud_elk.file_content:
       path: "{{ path }}"
       content: "{{ content }}"
