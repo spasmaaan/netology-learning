@@ -1,0 +1,5 @@
+---
+  - name:
+    file_content:
+      path: "{{ path }}"
+      content: "{{ content }}"

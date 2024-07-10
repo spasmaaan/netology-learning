@@ -193,27 +193,27 @@ if __name__ == '__main__':
 
 **Шаг 8.** Инициализируйте новую collection: `ansible-galaxy collection init spasmaaan.yandex_cloud_elk`.
 
-
+**+**
 
 
 **Шаг 9.** В эту collection перенесите свой module в соответствующую директорию.
 
-
+**+**
 
 
 **Шаг 10.** Single task playbook преобразуйте в single task role и перенесите в collection. У role должны быть default всех параметров module.
 
-
+**+**
 
 
 **Шаг 11.** Создайте playbook для использования этой role.
 
-
+**+**
 
 
 **Шаг 12.** Заполните всю документацию по collection, выложите в свой репозиторий, поставьте тег `1.0.0` на этот коммит.
 
-
+**+**
 
 
 **Шаг 13.** Создайте .tar.gz этой collection: `ansible-galaxy collection build` в корневой директории collection.

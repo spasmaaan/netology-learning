@@ -1,0 +1,14 @@
+galaxy_info:
+  role_name: file_content_changer
+  namespace: spasmaaan
+  author: Spasman
+  description: Target file content writer
+  company: spasmaaan
+  license: MIT
+  min_ansible_version: 2.1
+  platforms:
+  - name: Centos
+    versions:
+     - 7
+  galaxy_tags: []
+  dependencies: []

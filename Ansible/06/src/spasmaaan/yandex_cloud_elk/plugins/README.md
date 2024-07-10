@@ -20,6 +20,7 @@ Here is an example directory of the majority of plugins currently supported by A
     ├── lookup
     ├── module_utils
     ├── modules
+    │   └── file_content.py
     ├── netconf
     ├── shell
     ├── strategy

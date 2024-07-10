@@ -2,11 +2,11 @@
 ---
 # Collections must specify a minimum required ansible version to upload
 # to galaxy
-# requires_ansible: '>=2.9.10'
+  requires_ansible: '>=2.9.10'
 
 # Content that Ansible needs to load from another location or that has
 # been deprecated/removed
-# plugin_routing:
+#  plugin_routing:
 #   action:
 #     redirected_plugin_name:
 #       redirect: ns.col.new_location
@@ -34,6 +34,7 @@
 #   lookup:
 #   module_utils:
 #   modules:
+#     - file_content
 #   netconf:
 #   shell:
 #   strategy:
