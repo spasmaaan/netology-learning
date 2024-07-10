@@ -195,6 +195,8 @@ if __name__ == '__main__':
 
 **+**
 
+[Ansible/06/src/spasmaaan/yandex_cloud_elk](https://github.com/spasmaaan/netology-learning/tree/yc_elk_1.0.0/Ansible/06/src/spasmaaan/yandex_cloud_elk)
+
 
 **Шаг 9.** В эту collection перенесите свой module в соответствующую директорию.
 
@@ -218,7 +220,9 @@ if __name__ == '__main__':
 
 **Шаг 13.** Создайте .tar.gz этой collection: `ansible-galaxy collection build` в корневой директории collection.
 
+**+**
 
+[spasmaaan-yandex_cloud_elk-1.0.0.tar.gz](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ansible/06/src/spasmaaan/yandex_cloud_elk/spasmaaan-yandex_cloud_elk-1.0.0.tar.gz?raw=true)
 
 
 **Шаг 14.** Создайте ещё одну директорию любого наименования, перенесите туда single task playbook и архив c collection.
