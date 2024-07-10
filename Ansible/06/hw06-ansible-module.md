@@ -237,12 +237,12 @@ if __name__ == '__main__':
 
 **Шаг 16.** Запустите playbook, убедитесь, что он работает.
 
-
+![1_16_run](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ansible/06/1_16_run.png?raw=true)
 
 
 **Шаг 17.** В ответ необходимо прислать ссылки на collection и tar.gz архив, а также скриншоты выполнения пунктов 4, 6, 15 и 16.
 
-
+**+**
 
 
 ## Необязательная часть

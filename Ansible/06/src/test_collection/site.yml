@@ -3,7 +3,6 @@
   hosts: localhost
   tasks:
   - name: Run test file_content
-    spasmaaan.yandex_cloud_elk.file_content_changer:
-      vars:
-        path: /home/leo-jek/test.txt
-        content: Test new 
+    spasmaaan.yandex_cloud_elk.file_content:
+      path: /home/leo-jek/test.txt
+      content: Test new
