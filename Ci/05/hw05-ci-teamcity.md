@@ -20,6 +20,8 @@
 
 6. Создайте VM (2CPU4RAM) и запустите [playbook](./infrastructure).
 ![06_teamcity_target](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ci/05/06_teamcity_target.png?raw=true)
+![06_playbook_1](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ci/05/06_playbook_1.png?raw=true)
+![06_playbook_2](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ci/05/06_playbook_2.png?raw=true)
 
 ## Основная часть
 
