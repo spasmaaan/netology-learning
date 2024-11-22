@@ -52,6 +52,7 @@
 
 8. Мигрируйте `build configuration` в репозиторий.
 ![8_repository](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ci/05/8_repository.png?raw=true)
+![8_success](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ci/05/8_success.png?raw=true)
 
 9. Создайте отдельную ветку `feature/add_reply` в репозитории.
 ![9_new_branch](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ci/05/9_new_branch.png?raw=true)
@@ -81,7 +82,7 @@
 ![17_build_artifacts](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ci/05/17_build_artifacts.png?raw=true)
 
 18. Проверьте, что конфигурация в репозитории содержит все настройки конфигурации из teamcity.
-
+![18_check_config](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ci/05/18_check_config.png?raw=true)
 
 19. В ответе пришлите ссылку на репозиторий.
 https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Ci/05/
