@@ -48,18 +48,28 @@
 Создайте Dashboard и в ней создайте Panels:
 
 - утилизация CPU для nodeexporter (в процентах, 100-idle);
+![2_1_cpu](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Monitoring/02/2_1_cpu.png?raw=true)
 - CPULA 1/5/15;
+![2_2_cpula](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Monitoring/02/2_2_cpula.png?raw=true)
 - количество свободной оперативной памяти;
+![2_3_mem](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Monitoring/02/2_3_mem.png?raw=true)
 - количество места на файловой системе.
+![2_4_storage](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Monitoring/02/2_4_storage.png?raw=true)
 
 Для решения этого задания приведите promql-запросы для выдачи этих метрик, а также скриншот получившейся Dashboard.
+
+![2_5_all](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Monitoring/02/2_5_all.png?raw=true)
 
 ## Задание 3
 
 1. Создайте для каждой Dashboard подходящее правило alert — можно обратиться к первой лекции в блоке «Мониторинг».
 2. В качестве решения задания приведите скриншот вашей итоговой Dashboard.
 
+![3_alerts](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Monitoring/02/3_alerts.png?raw=true)
+
 ## Задание 4
 
 1. Сохраните ваш Dashboard.Для этого перейдите в настройки Dashboard, выберите в боковом меню «JSON MODEL». Далее скопируйте отображаемое json-содержимое в отдельный файл и сохраните его.
 2. В качестве решения задания приведите листинг этого файла.
+
+![CommonDashboard.json](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Monitoring/02/CommonDashboard.json)
