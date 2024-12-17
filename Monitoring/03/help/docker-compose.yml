@@ -26,8 +26,8 @@ services:
         soft: -1
         hard: -1
       nofile:
-        soft: 65536
-        hard: 65536
+        soft: 262144
+        hard: 262144
     ports:
       - 9200:9200
     networks:
@@ -54,8 +54,8 @@ services:
         soft: -1
         hard: -1
       nofile:
-        soft: 65536
-        hard: 65536
+        soft: 262144
+        hard: 262144
     networks:
       - elastic
 
