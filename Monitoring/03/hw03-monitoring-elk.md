@@ -34,31 +34,28 @@ Logstash следует сконфигурировать для приёма п�
 
 Filebeat следует сконфигурировать для отправки логов docker вашей системы в logstash.
 
-В директории [help](./help) находится манифест docker-compose и конфигурации filebeat/logstash для быстрого 
-выполнения этого задания.
+В директории [help](./help) находится манифест docker-compose и конфигурации filebeat/logstash для быстрого выполнения этого задания.
 
 Результатом выполнения задания должны быть:
 
 - скриншот `docker ps` через 5 минут после старта всех контейнеров (их должно быть 5);
+![1_1_docker](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Monitoring/03/1_1_docker.png?raw=true)
 - скриншот интерфейса kibana;
-- docker-compose манифест (если вы не использовали директорию help);
-- ваши yml-конфигурации для стека (если вы не использовали директорию help).
+![1_2_kibana](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Monitoring/03/1_2_kibana.png?raw=true)
+- docker-compose манифест (если вы не использовали директорию help); **-**
+- ваши yml-конфигурации для стека (если вы не использовали директорию help). **-**
 
 ## Задание 2
 
-Перейдите в меню [создания index-patterns  в kibana](http://localhost:5601/app/management/kibana/indexPatterns/create) и создайте несколько index-patterns из имеющихся.
+Перейдите в меню [создания index-patterns в kibana](http://localhost:5601/app/management/kibana/indexPatterns/create) и создайте несколько index-patterns из имеющихся.
+
+![2_1_view](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Monitoring/03/2_1_view.png?raw=true)
 
 Перейдите в меню просмотра логов в kibana (Discover) и самостоятельно изучите, как отображаются логи и как производить поиск по логам.
 
-В манифесте директории help также приведенно dummy-приложение, которое генерирует рандомные события в stdout-контейнера.
+![2_2_kql_1](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Monitoring/03/2_2_kql_1.png?raw=true)
+
+В манифесте директории help также приведено dummy-приложение, которое генерирует рандомные события в stdout-контейнера.
 Эти логи должны порождать индекс logstash-* в elasticsearch. Если этого индекса нет — воспользуйтесь советами и источниками из раздела «Дополнительные ссылки» этого задания.
- 
----
 
-### Как оформить решение задания
-
-Выполненное домашнее задание пришлите в виде ссылки на .md-файл в вашем репозитории.
-
----
-
- 
+![2_2_kql_2](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Monitoring/03/2_2_kql_2.png?raw=true)
