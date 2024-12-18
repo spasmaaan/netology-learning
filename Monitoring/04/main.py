@@ -9,7 +9,7 @@ sentry_sdk.init(
     release="1.0",
 )
 
-test: random.random()
+test = random.random()
 
 if test < 0.15:
   logging.info("Info test")
