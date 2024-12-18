@@ -76,8 +76,8 @@ Free Cloud account имеет ограничения:
 
 2. Поэкспериментируйте с различными передаваемыми параметрами, но помните об ограничениях Free учётной записи Cloud Sentry.
 
-
+![4_2_runs](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Monitoring/04/4_2_runs.png?raw=true)
 
 3. В качестве решения задания пришлите скриншот меню issues вашего проекта и пример кода подключения sentry sdk/отсылки событий.
 
-
+![4_3_events](https://github.com/spasmaaan/netology-learning/blob/cource/ShDevOps/Monitoring/04/4_3_events.png?raw=true)
