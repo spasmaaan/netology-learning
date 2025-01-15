@@ -29,7 +29,7 @@ services:
     restart: on-failure
     entrypoint: > 
       /bin/sh -c "      
-      /usr/bin/mc admin config host add storage http://storage:9000 ${Storage_AccessKey-STORAGE_ACCESS_KEY} ${Storage_Secret-STORAGE_SECRET_KEY} &&
+      /usr/bin/mc alias set storage http://storage:9000 ${Storage_AccessKey-STORAGE_ACCESS_KEY} ${Storage_Secret-STORAGE_SECRET_KEY} &&
       /usr/bin/mc mb --ignore-existing storage/${Storage_Bucket:-data} &&
       /usr/bin/mc admin policy set download storage/${Storage_Bucket:-data} &&
       exit 0;
