@@ -41,7 +41,15 @@ app.post("/v1/upload", (request, response) => {
   request.on("end", async () => {
     var buf = Buffer.concat(bufs);
 
-    const fileType = await FileType.fromBuffer(buf);
+    let fileType = await FileType.fromBuffer(buf);
+    
+    // Почему-то тип файла не определяется.
+    if (!fileType || !fileType.mime) {
+      fileType = {
+        mime: "image/jpeg",
+        ext: "jpg"
+      };
+    }
 
     if (!fileType || !fileType.mime) {
       console.warn(`Failed to detect file mime type`);
