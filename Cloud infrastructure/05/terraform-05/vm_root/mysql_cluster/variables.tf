@@ -31,3 +31,8 @@ variable "hosts" {
     subnet_id    = string
   }))
 }
+
+variable "security_group_id" {
+  type = string
+  description = "Array of security group ids"
+}

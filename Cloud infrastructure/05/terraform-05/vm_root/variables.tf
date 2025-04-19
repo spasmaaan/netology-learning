@@ -23,21 +23,6 @@ variable "vms_ssh_root_keyfile" {
   description = "ssh-keygen -t ed25519"
 }
 
-
-###example vm_web var
-variable "vm_web_name" {
-  type        = string
-  default     = "netology-develop-platform-web"
-  description = "example vm_web_ prefix"
-}
-
-###example vm_db var
-variable "vm_db_name" {
-  type        = string
-  default     = "netology-develop-platform-db"
-  description = "example vm_db_ prefix"
-}
-
 variable "vm_cloud_init_file" {
   type        = string
   default     = "./cloud-init.yml"
@@ -49,32 +34,81 @@ variable "vms_options" {
     name               = string,
     count              = number,
     env                = string,
-    image_family       = string,
-    public_ip          = bool,
-    serial_port_enable = number
+    image_family       = string
   }))
   default = {
     analitycs = {
         name                = "analytics",
         count               = 1,
         env                 = "stage",
-        image_family        = "ubuntu-2004-lts",
-        public_ip           = true,
-        serial_port_enable  = 1
+        image_family        = "ubuntu-2004-lts"
     },
     marketing = {
         name                = "marketing",
         count               = 1,
         env                 = "stage",
-        image_family        = "ubuntu-2004-lts",
-        public_ip           = true,
-        serial_port_enable  = 1
+        image_family        = "ubuntu-2004-lts"
     }
   }
 }
 
-variable "s3_bucket_name" {
-  type        = string
-  default     = "s3-test"
-  description = "S3 bucket name."
+variable "security_group_ingress" {
+  description = "secrules ingress"
+  type = list(object(
+    {
+      protocol       = string
+      description    = string
+      v4_cidr_blocks = list(string)
+      port           = optional(number)
+      from_port      = optional(number)
+      to_port        = optional(number)
+  }))
+  default = [
+    {
+      protocol       = "TCP"
+      description    = "разрешить входящий ssh"
+      v4_cidr_blocks = ["0.0.0.0/0"]
+      port           = 22
+    },
+    {
+      protocol       = "TCP"
+      description    = "разрешить входящий  http"
+      v4_cidr_blocks = ["0.0.0.0/0"]
+      port           = 80
+    },
+    {
+      protocol       = "TCP"
+      description    = "разрешить входящий https"
+      v4_cidr_blocks = ["0.0.0.0/0"]
+      port           = 443
+    },
+  ]
+}
+
+variable "security_group_egress" {
+  description = "secrules egress"
+  type = list(object(
+    {
+      protocol       = string
+      description    = string
+      v4_cidr_blocks = list(string)
+      port           = optional(number)
+      from_port      = optional(number)
+      to_port        = optional(number)
+  }))
+  default = [
+    { 
+      protocol       = "TCP"
+      description    = "разрешить весь исходящий трафик"
+      v4_cidr_blocks = ["0.0.0.0/0"]
+      from_port      = 0
+      to_port        = 65365
+    }
+  ]
+}
+
+variable "vpc_security_group_name" {
+  type = string
+  default = "vpc-security-group"
+  description = "VPC security group name"
 }
